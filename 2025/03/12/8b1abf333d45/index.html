@@ -21,12 +21,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.stellortus.top","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.28.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="提醒在开发mod前，首先应该知道要实现的功能是否需要一个mod来解决。  一部分简单的逻辑，或者修改合成配方，用数据包即可。  如果只是修改模型、贴图、语言文件，用资源包(材质包)即可。   排除上面的情况之后，就要正式开始制作mod了！ 准备工作编程相关作为mod开发者，需要一定的Java&#x2F;Kotlin基础。 当然，编程语言基本都是互通的，所以有其它语言的基础也会有很大帮助没有也没太大">
+    <meta name="description" content="提醒 在开发mod前，首先应该知道要实现的功能是否需要一个mod来解决。   一部分简单的逻辑，或者修改合成配方，用数据包即可。   如果只是修改模型、贴图、语言文件，用资源包(材质包)即可。   排除上面的情况之后，就要正式开始制作mod了！  准备工作  编程相关 作为mod开发者，需要一定的Java&#x2F;Kotlin基础。 当然，编程语言基本都是互通的，所以有其它语言的基础也会有很大帮助没有也">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MC Forge 开发笔记00-准备工作">
 <meta property="og:url" content="https://blog.stellortus.top/2025/03/12/8b1abf333d45/index.html">
 <meta property="og:site_name" content="Stellortus">
-<meta property="og:description" content="提醒在开发mod前，首先应该知道要实现的功能是否需要一个mod来解决。  一部分简单的逻辑，或者修改合成配方，用数据包即可。  如果只是修改模型、贴图、语言文件，用资源包(材质包)即可。   排除上面的情况之后，就要正式开始制作mod了！ 准备工作编程相关作为mod开发者，需要一定的Java&#x2F;Kotlin基础。 当然，编程语言基本都是互通的，所以有其它语言的基础也会有很大帮助没有也没太大">
+<meta property="og:description" content="提醒 在开发mod前，首先应该知道要实现的功能是否需要一个mod来解决。   一部分简单的逻辑，或者修改合成配方，用数据包即可。   如果只是修改模型、贴图、语言文件，用资源包(材质包)即可。   排除上面的情况之后，就要正式开始制作mod了！  准备工作  编程相关 作为mod开发者，需要一定的Java&#x2F;Kotlin基础。 当然，编程语言基本都是互通的，所以有其它语言的基础也会有很大帮助没有也">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.stellortus.top/images/2025/03/12/1.png">
 <meta property="article:published_time" content="2025-03-11T16:00:10.000Z">
@@ -176,7 +176,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E9%86%92"><span class="nav-number">1.</span> <span class="nav-text">提醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3"><span class="nav-number">2.1.</span> <span class="nav-text">编程相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.2.</span> <span class="nav-text">软件下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAmod%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.</span> <span class="nav-text">创建mod项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-number">2.4.</span> <span class="nav-text">操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%88%90"><span class="nav-number">3.</span> <span class="nav-text">完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">代码解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%90%E6%A7%BD"><span class="nav-number">5.</span> <span class="nav-text">吐槽</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E9%86%92"><span class="nav-number">1.</span> <span class="nav-text"> 提醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text"> 准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3"><span class="nav-number">2.1.</span> <span class="nav-text"> 编程相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.2.</span> <span class="nav-text"> 软件下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAmod%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.</span> <span class="nav-text"> 创建mod项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-number">2.4.</span> <span class="nav-text"> 操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%88%90"><span class="nav-number">3.</span> <span class="nav-text"> 完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text"> 代码解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%90%E6%A7%BD"><span class="nav-number">5.</span> <span class="nav-text"> 吐槽</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -311,24 +311,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h2><p>在开发mod前，首先应该知道要实现的功能是否需要一个mod来解决。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="提醒"><a class="markdownIt-Anchor" href="#提醒"></a> 提醒</h2>
+<p>在开发mod前，首先应该知道要实现的功能是否需要一个mod来解决。</p>
 <ul>
-<li><p>一部分简单的逻辑，或者修改合成配方，用数据包即可。</p>
+<li>
+<p>一部分简单的逻辑，或者修改合成配方，用数据包即可。</p>
 </li>
-<li><p>如果只是修改模型、贴图、语言文件，用资源包(材质包)即可。</p>
+<li>
+<p>如果只是修改模型、贴图、语言文件，用资源包(材质包)即可。</p>
 </li>
 </ul>
 <p>排除上面的情况之后，就要正式开始制作mod了！</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="编程相关"><a href="#编程相关" class="headerlink" title="编程相关"></a>编程相关</h3><p>作为mod开发者，需要一定的Java&#x2F;Kotlin基础。</p>
-<p>当然，编程语言基本都是互通的，所以有其它语言的基础也会有很大帮助<del>没有也没太大关系</del>。</p>
+<h2 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h2>
+<h3 id="编程相关"><a class="markdownIt-Anchor" href="#编程相关"></a> 编程相关</h3>
+<p>作为mod开发者，需要一定的Java/Kotlin基础。</p>
+<p>当然，编程语言基本都是互通的，所以有其它语言的基础也会有很大帮助<s>没有也没太大关系</s>。</p>
 <p>只要你有<strong>举一反三</strong>、<strong>复制粘贴</strong>、<strong>看懂单词</strong>的能力，开发mod也不是什么难事。</p>
-<h3 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h3><p>开发Java&#x2F;Kotlin的工具，首先推荐<a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/">Intellij Idea</a>。个人开发者推荐使用社区版(Community)<del>或者使用一些破解工具</del>。</p>
+<h3 id="软件下载"><a class="markdownIt-Anchor" href="#软件下载"></a> 软件下载</h3>
+<p>开发Java/Kotlin的工具，首先推荐<a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/">Intellij Idea</a>。个人开发者推荐使用社区版(Community)<s>或者使用一些破解工具</s>。</p>
 <p>下载并安装完成后，打开<code>Idea</code>，在左边找到<code>Plugins</code>，下载<code>Minecraft Development</code>插件。</p>
 <p>在同样的位置，可以找到官方支持的简体中文插件。为了保持统一，这里的图片中不使用这些插件(如果下载了也可以根据位置对照)。</p>
-<h3 id="创建mod项目"><a href="#创建mod项目" class="headerlink" title="创建mod项目"></a>创建mod项目</h3><ul>
+<h3 id="创建mod项目"><a class="markdownIt-Anchor" href="#创建mod项目"></a> 创建mod项目</h3>
+<ul>
 <li>首先创建项目(<code>New Project</code>)，根据以下提示填写基本信息。</li>
 </ul>
-<p><img src="/images/2025/03/12/1.png" alt="创建项目示例图片"></p>
+<p><img src="/images/2025/03/12/1.png" alt="创建项目示例图片" /></p>
 <p>由上到下：</p>
 <ul>
 <li><code>Name</code>：项目名称，一般为Mod名称。</li>
@@ -340,44 +347,56 @@
 </ul>
 <p>注意：如果要修改原版的代码(通常需要)，可以提前勾选上Mixin。</p>
 <ul>
-<li><p>等待构建完成，如果构建失败可以使用镜像源，具体见<a href="%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE%E7%9A%84%E9%93%BE%E6%8E%A5%EF%BC%81%EF%BC%81%EF%BC%81">镜像配置</a>。</p>
+<li>
+<p>等待构建完成，如果构建失败可以使用镜像源，具体见<a href="%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE%E7%9A%84%E9%93%BE%E6%8E%A5%EF%BC%81%EF%BC%81%EF%BC%81">镜像配置</a>。</p>
 </li>
-<li><p>删除<code>Config.java</code>和Mod主类中多余的内容，稍作修改之后：</p>
+<li>
+<p>删除<code>Config.java</code>和Mod主类中多余的内容，稍作修改之后：</p>
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example_domain.example_mod;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.mojang.logging.LogUtils;</span><br><span class="line"><span class="keyword">import</span> net.minecraftforge.fml.common.Mod;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The value here should match an entry in the META-INF/mods.toml file</span></span><br><span class="line"><span class="meta">@Mod(Main.MOD_ID)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Define mod id in a common place for everything to reference</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">MOD_ID</span> <span class="operator">=</span> <span class="string">&quot;example_mod&quot;</span>;</span><br><span class="line">    <span class="comment">// Directly reference a slf4j logger</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LogUtils.getLogger();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>代码部分的详细解释见<a href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A">代码解释</a>部分。</p>
-<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<h3 id="操作"><a class="markdownIt-Anchor" href="#操作"></a> 操作</h3>
+<ul>
 <li>运行客户端：选择<code>runClient</code>。</li>
 <li>运行服务端：选择<code>runServer</code>(通常不会选)。</li>
 <li>导出为Jar文件：在右边的Gradle中，依次选择<code>Tasks-&gt;build-&gt;build</code>，等待之后在左边文件夹<code>build/libs</code>中可以找到Mod的jar文件。</li>
 <li>修改mod版本：在<code>gradle.properties</code>中找到<code>mod_version</code>，修改即可。切忌把版本号改小！</li>
 </ul>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>至此，一个Minecraft Mod项目就制作完毕了。</p>
+<h2 id="完成"><a class="markdownIt-Anchor" href="#完成"></a> 完成</h2>
+<p>至此，一个Minecraft Mod项目就制作完毕了。</p>
 <p>虽然目前这个Mod还没有任何功能，但是已经<strong>可以</strong>改变这个世界的一切了，不是吗？</p>
-<h2 id="代码解释"><a href="#代码解释" class="headerlink" title="代码解释"></a>代码解释</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example_domain.example_mod;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.mojang.logging.LogUtils;</span><br><span class="line"><span class="keyword">import</span> net.minecraftforge.fml.common.Mod;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The value here should match an entry in the META-INF/mods.toml file</span></span><br><span class="line"><span class="meta">@Mod(Main.MOD_ID)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Define mod id in a common place for everything to reference</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">MOD_ID</span> <span class="operator">=</span> <span class="string">&quot;example_mod&quot;</span>;</span><br><span class="line">    <span class="comment">// Directly reference a slf4j logger</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LogUtils.getLogger();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="代码解释"><a class="markdownIt-Anchor" href="#代码解释"></a> 代码解释</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example_domain.example_mod;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.mojang.logging.LogUtils;</span><br><span class="line"><span class="keyword">import</span> net.minecraftforge.fml.common.Mod;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The value here should match an entry in the META-INF/mods.toml file</span></span><br><span class="line"><span class="meta">@Mod(Main.MOD_ID)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Define mod id in a common place for everything to reference</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">MOD_ID</span> <span class="operator">=</span> <span class="string">&quot;example_mod&quot;</span>;</span><br><span class="line">    <span class="comment">// Directly reference a slf4j logger</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LogUtils.getLogger();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>每条语句之后要有分号！！！</strong></p>
 <p>逐行：</p>
 <ul>
-<li><p><code>package</code>之后的内容和包名保持一致。</p>
+<li>
+<p><code>package</code>之后的内容和包名保持一致。</p>
 </li>
-<li><p><code>import</code>暂时不用关注。</p>
+<li>
+<p><code>import</code>暂时不用关注。</p>
 </li>
-<li><p><code>@Mod(string)</code>：<code>@Mod</code>是<strong>注解</strong>，放在类的定义之前，表示下面的类是Mod主类，string是Mod ID。</p>
+<li>
+<p><code>@Mod(string)</code>：<code>@Mod</code>是<strong>注解</strong>，放在类的定义之前，表示下面的类是Mod主类，string是Mod ID。</p>
 </li>
-<li><p><code>public class Main</code>：定义一个类，Main与上面的类名保持一致，大括号中是这个类的内容。它会被上一行标记为<strong>Mod主类</strong>。</p>
+<li>
+<p><code>public class Main</code>：定义一个类，Main与上面的类名保持一致，大括号中是这个类的内容。它会被上一行标记为<strong>Mod主类</strong>。</p>
 </li>
-<li><p><code>public static final String MOD_ID</code>：定义一个变量，它具有如下性质：</p>
+<li>
+<p><code>public static final String MOD_ID</code>：定义一个变量，它具有如下性质：</p>
 <ul>
-<li><p><code>public</code>：在任何地方都可以访问。</p>
+<li>
+<p><code>public</code>：在任何地方都可以访问。</p>
 </li>
-<li><p><code>static</code>：不需要创建一个对象(实例化)，使用<code>类名.变量名</code>的方式就可以访问(如<code>Main.MOD_ID</code>) 。</p>
+<li>
+<p><code>static</code>：不需要创建一个对象(实例化)，使用<code>类名.变量名</code>的方式就可以访问(如<code>Main.MOD_ID</code>) 。</p>
 </li>
-<li><p><code>final</code>：变量不可以被修改(常量)。</p>
+<li>
+<p><code>final</code>：变量不可以被修改(常量)。</p>
 </li>
-<li><p><code>String</code>：变量的类型为字符串(可以理解为一堆字就是字符串)。每个变量都要有类型，以下是常用的类型：</p>
+<li>
+<p><code>String</code>：变量的类型为字符串(可以理解为一堆字就是字符串)。每个变量都要有类型，以下是常用的类型：</p>
 <ul>
 <li><code>int</code>：整型，存放整数。</li>
 <li><code>float</code>：浮点型(可以理解为小数)。</li>
@@ -385,18 +404,23 @@
 <li><code>String</code>：字符串。</li>
 </ul>
 </li>
-<li><p><code>MOD_ID</code>：表示这个变量的名称为<code>MOD_ID</code>。</p>
+<li>
+<p><code>MOD_ID</code>：表示这个变量的名称为<code>MOD_ID</code>。</p>
 </li>
 </ul>
 </li>
-<li><p><code>&quot;example_mod&quot;</code>：表示一个字符串，所有的字符串都要使用双引号。</p>
+<li>
+<p><code>&quot;example_mod&quot;</code>：表示一个字符串，所有的字符串都要使用双引号。</p>
 </li>
-<li><p><code>LOGGER</code>：日志记录器。可以很方便的调试程序，分不同的等级，常用的有<code>info</code>、<code>error</code>和<code>debug</code>。用法：<code>LOGGER.info(string)</code>，string表示日志输出的内容(字符串)。</p>
+<li>
+<p><code>LOGGER</code>：日志记录器。可以很方便的调试程序，分不同的等级，常用的有<code>info</code>、<code>error</code>和<code>debug</code>。用法：<code>LOGGER.info(string)</code>，string表示日志输出的内容(字符串)。</p>
 </li>
-<li><p><code>//</code>后表示注释，给人看的东西，随便写<del>其实很少有人写</del>。</p>
+<li>
+<p><code>//</code>后表示注释，给人看的东西，随便写<s>其实很少有人写</s>。</p>
 </li>
 </ul>
-<h2 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h2><p><del>怎么一不小心写了这么多…？</del></p>
+<h2 id="吐槽"><a class="markdownIt-Anchor" href="#吐槽"></a> 吐槽</h2>
+<p><s>怎么一不小心写了这么多…？</s></p>
 
     </div>
 
