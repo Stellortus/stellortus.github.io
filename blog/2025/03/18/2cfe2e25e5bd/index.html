@@ -29,7 +29,7 @@
 <meta property="og:description" content="严格说，和int128一样，string不属于算法，但为了便于归类才标记为算法。 前言觉得char[]难用？一起来用string吧！ 使用方法一般地，同为数据类型，大部分的操作都可以参考int类型变量。 输入&#x2F;输出如果输入以空格或换行符分隔，可以直接使用cin。 12string str;cin &gt;&gt; str;  如果希望输入一整行(包括空格)的话，可以使用getline。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-18T15:50:18.000Z">
-<meta property="article:modified_time" content="2026-07-17T16:47:53.995Z">
+<meta property="article:modified_time" content="2026-09-26T12:14:14.467Z">
 <meta property="article:author" content="Stellortus">
 <meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary">
@@ -287,7 +287,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-07-18 00:47:53" itemprop="dateModified" datetime="2026-07-18T00:47:53+08:00">2026-07-18</time>
+      <time title="Modified: 2026-09-26 20:14:14" itemprop="dateModified" datetime="2026-09-26T20:14:14+08:00">2026-09-26</time>
     </span>
 
   
@@ -316,7 +316,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string str;</span><br><span class="line"><span class="built_in">getline</span>(cin, str);</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意：在使用<code>getline</code>前，如果使用过<code>cin</code>，必须先清空输入流！</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string str1, str2;</span><br><span class="line">cin &gt;&gt; str;</span><br><span class="line">cin.<span class="built_in">clear</span>();</span><br><span class="line">cin.<span class="built_in">ignore</span>();</span><br><span class="line"><span class="built_in">getline</span>(cin, str2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string str1, str2;</span><br><span class="line">cin &gt;&gt; str1;</span><br><span class="line">cin.<span class="built_in">ignore</span>();</span><br><span class="line"><span class="built_in">getline</span>(cin, str2);</span><br></pre></td></tr></table></figure>
 
 <p>输出直接用<code>cout</code>即可。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string str = <span class="string">&quot;wither_ixg&quot;</span>;</span><br><span class="line">cout &lt;&lt; str &lt;&lt; endl; <span class="comment">// wither_ixg</span></span><br></pre></td></tr></table></figure>
