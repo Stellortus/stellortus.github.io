@@ -181,7 +181,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,6 +207,9 @@
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/blog/2026/10/01/35523ea03176/" title="blog&#x2F;2026&#x2F;10&#x2F;01&#x2F;35523ea03176&#x2F;">均值不等式部分题型</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/blog/2026/09/25/cb02cfdb4347/" title="blog&#x2F;2026&#x2F;09&#x2F;25&#x2F;cb02cfdb4347&#x2F;">Windows找不到该文件</a>
         </li>
         <li class="links-of-recent-posts-item">
@@ -217,9 +220,6 @@
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/blog/2026/07/18/a09136c179c9/" title="blog&#x2F;2026&#x2F;07&#x2F;18&#x2F;a09136c179c9&#x2F;">重构声明v2&复活！</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/blog/2025/10/06/daf5e5cc5830/" title="blog&#x2F;2025&#x2F;10&#x2F;06&#x2F;daf5e5cc5830&#x2F;">中秋月圆v2</a>
         </li>
     </ul>
   </div>
@@ -235,6 +235,137 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.stellortus.top/blog/2024/10/14/e56f5f8ce2c9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/./images/avatar.jpg">
+      <meta itemprop="name" content="Stellortus">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Stellortus">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Stellortus">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2024/10/14/e56f5f8ce2c9/" class="post-title-link" itemprop="url">模拟题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-10-14 12:47:00" itemprop="dateCreated datePublished" datetime="2024-10-14T12:47:00+08:00">2024-10-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-07-18 00:20:32" itemprop="dateModified" datetime="2026-07-18T00:20:32+08:00">2026-07-18</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>868</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <!-- markdownlint-disable-file -->
+<h2 id="2024-10-18"><a href="#2024-10-18" class="headerlink" title="2024-10-18"></a>2024-10-18</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1026">P1026</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1054">P1054</a></p>
+<h2 id="2024-10-17"><a href="#2024-10-17" class="headerlink" title="2024-10-17"></a>2024-10-17</h2><h3 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h3><p>在商店中，每一种商品都有一个价格（用整数表示）。例如,一朵花的价格是 $2$ ，而一个花瓶的价格是 $5$ 。为了吸引更多的顾客，商店举行了促销活动。</p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>促销活动把一个或多个商品组合起来降价销售，例如：</p>
+<p>三朵花的价格是 $5$ 而不是 $6$ ，$2$ 个花瓶和一朵花的价格是 $10$ 而不是 $12$ 。 请编写一个程序，计算顾客购买一定商品的花费，尽量地利用优惠使花费最少。尽管有时候添加其他商品可以获得更少的花费，但是你不能这么做。</p>
+<p>对于上面的商品信息，购买三朵花和两个花瓶的最少花费的方案是：以优惠价购买两个花瓶和一朵花（$10$），以原价购买两朵花（$4$）。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入文件包括一些商店提供的优惠信息，接着是购物清单。（最多有 $5$ 种商品）</p>
+<p>第一行 优惠方案的种类数（$0\leq s\leq99$）。</p>
+<p>第 $2$ 行 $\sim$ 第 $s+1$ 行  每一行都用几个整数来表示一种优惠方式。第一个整数 $n$ （$\leq n\leq5$），表示这种优惠方式由 $n$ 种商品组成。后面 $n$ 对整数 $c$ 和 $k$ 表示 $k$ （$1\leq k\leq5$）个编号为 $c$ （$1\leq c\leq999$）的商品共同构成这种优惠，最后的整数 $p$ 表示这种优惠的优惠价（$1\leq p\leq9,999$）。优惠价总是比原价低。</p>
+<p>第 $s+2$ 行 这一行有一个整数 $b$ （$0\leq b\leq5$），表示需要购买 $b$ 种不同的商品。</p>
+<p>第 $s+3$ 行 $\sim$ 第 $s+b+2$ 行 这 $b$ 行中的每一行包括三个整数：$c,k,p$ 。 $c$ 表示唯一的商品编号（$1\leq c\leq999$），$k$ 表示需要购买的 $c$ 商品的数量（$1\leq k\leq5$）。$p$ 表示 $c$ 商品的原价（$1\leq p\leq999$）。最多购买 $5\times5&#x3D;25$ 个商品。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>只有一行，输出一个整数：购买这些物品的最低价格。</p>
+<h3 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">1 7 3 5</span><br><span class="line">2 7 1 8 2 10</span><br><span class="line">2</span><br><span class="line">7 3 2</span><br><span class="line">8 2 5</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14</span><br></pre></td></tr></table></figure>
+
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>题目翻译来自NOCOW。</p>
+<p>USACO Training Section 3.3</p>
+<h2 id="2024-10-16"><a href="#2024-10-16" class="headerlink" title="2024-10-16"></a>2024-10-16</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>老师想从 $n$ 名学生中选 $m$ 人当学霸，但有 $k$ 对人实力相当，如果实力相当的人中，一部分被选上，另一部分没有，同学们就会抗议。所以老师想请你帮他求出他该选多少学霸，才能既不让同学们抗议，又与原来的 $m$ 尽可能接近。</p>
+<h3 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行，三个正整数 $n,m,k$。</p>
+<p>接下来 $k$ 行，每行 $2$ 个数，表示一对实力相当的人的编号（编号为 $1,2,\cdots n$）。</p>
+<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h3><p>共一行，表示既不让同学们抗议，又与原来的 $m$ 尽可能接近的选出学霸的数目。</p>
+<p>如果有两种方案与 $m$ 的差的绝对值相等，选较小的一种。</p>
+<h3 id="样例-1-1"><a href="#样例-1-1" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-1"><a href="#样例输入-1-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">4 3 2</span><br><span class="line">1 2</span><br><span class="line">3 4</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-1"><a href="#样例输出-1-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h3 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a>提示</h3><p>对于 $100%$ 的数据，满足 $1 \le n,m \le 2 \times 10^4$。</p>
+<h2 id="2024-10-15"><a href="#2024-10-15" class="headerlink" title="2024-10-15"></a>2024-10-15</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/images/2024/10/15/1.png"></p>
+<p><code>rnd</code>函数如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">rnd</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> MOD = <span class="number">1e9</span>;</span><br><span class="line">    <span class="keyword">return</span> Seed = ( <span class="number">1LL</span> * Seed * <span class="number">0x66CCFF</span> % MOD + <span class="number">20120712</span> ) % MOD;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="样例-1-2"><a href="#样例-1-2" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-2"><a href="#样例输入-1-2" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5 3 4 1 0</span><br><span class="line">1 2 3 4 5</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-1-2"><a href="#样例输出-1-2" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">27</span><br></pre></td></tr></table></figure>
+
+<h3 id="样例-2"><a href="#样例-2" class="headerlink" title="样例 #2"></a>样例 #2</h3><h4 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入 #2"></a>样例输入 #2</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10 30630 56910 2 0</span><br><span class="line">7484 99194 86969 17540 29184 68691 91892 81564 93999 74280</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出 #2"></a>样例输出 #2</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">717318</span><br></pre></td></tr></table></figure>
+
+<h3 id="样例-3"><a href="#样例-3" class="headerlink" title="样例 #3"></a>样例 #3</h3><h4 id="样例输入-3"><a href="#样例输入-3" class="headerlink" title="样例输入 #3"></a>样例输入 #3</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10000000 899999999 923456655 213111 1</span><br><span class="line">1314520</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出-3"><a href="#样例输出-3" class="headerlink" title="样例输出 #3"></a>样例输出 #3</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9231813656566921</span><br></pre></td></tr></table></figure>
+
+<h2 id="2024-10-12"><a href="#2024-10-12" class="headerlink" title="2024-10-12"></a>2024-10-12</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p><img src="/images/2024/10/14/1.jpg"><br><img src="/images/2024/10/14/2.jpg"><br><img src="/images/2024/10/14/3.jpg"></p>
+<h3 id="样例-1-3"><a href="#样例-1-3" class="headerlink" title="样例 #1"></a>样例 #1</h3><h4 id="样例输入-1-3"><a href="#样例输入-1-3" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">13 21 1 1</span><br><span class="line">1000 6000</span><br><span class="line">7</span><br><span class="line">1 2</span><br><span class="line">3 7</span><br><span class="line">2 4</span><br><span class="line">5 8</span><br><span class="line">8 9</span><br><span class="line">2 5</span><br><span class="line">3 4</span><br><span class="line">4 7</span><br><span class="line">9 10</span><br><span class="line">10 11</span><br><span class="line">5 9</span><br><span class="line">7 12</span><br><span class="line">3 6</span><br><span class="line">4 5</span><br><span class="line">1 3</span><br><span class="line">11 12</span><br><span class="line">6 7</span><br><span class="line">8 11</span><br><span class="line">6 13</span><br><span class="line">7 8</span><br><span class="line">12 13</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输入-1-4"><a href="#样例输入-1-4" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">11000</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1357,141 +1488,6 @@
 <li>不小心把退出条件写成了<code>cost[e.to] &gt;= money</code>（应不含等于号）。</li>
 </ul>
 <p>总之，这题虽然看着简单，但是实际操作会有很多的坑点需要注意。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.stellortus.top/blog/2024/10/01/6a35a3531745/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/./images/avatar.jpg">
-      <meta itemprop="name" content="Stellortus">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Stellortus">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Stellortus">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2024/10/01/6a35a3531745/" class="post-title-link" itemprop="url">算法-二分答案</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-10-01 00:36:09" itemprop="dateCreated datePublished" datetime="2024-10-01T00:36:09+08:00">2024-10-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-07-18 00:04:40" itemprop="dateModified" datetime="2026-07-18T00:04:40+08:00">2026-07-18</time>
-    </span>
-
-  
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>731</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>二分查找是在一个<strong>有序</strong>数组中，每次查找将数组分成两半，并将查找值与中间值比较，是一个快速查找（$O(\log n)$）的方法。<br>例如，在 $[1, 2, 3, 4, 5, 5, 7]$ 中查找 $7$：</p>
-<ul>
-<li>获取中间值 $4$，$4 &lt; 5$，所以在右半边 $[5, 5, 7]$ 继续查找。</li>
-<li>获取中间值 $5$，$5 &lt; 7$，所以在右半边 $[7]$ 继续查找。</li>
-<li>数组中只有一个元素 $7$，查找完成。</li>
-</ul>
-<p>二分答案与其非常相似，是在一个具有单调性的问题中，查找最值的方法。</p>
-<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><h3 id="单调性"><a href="#单调性" class="headerlink" title="单调性"></a>单调性</h3><p>什么问题具有单调性呢？</p>
-<p>以下是几个具有单调性的问题：</p>
-<ul>
-<li>数字炸弹（伪）：已知数字 $x \in [1,n]$ 后全是炸弹，求出最后一个安全位置。</li>
-<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2678">NOIP2015 提高组 跳石头</a>：已知隔一段距离有一块石头，求出拆除 $x$ 个石头后，最近两块石头间距离的最大值。</li>
-</ul>
-<p>以上问题都有共同点：</p>
-<ul>
-<li>问题有确定的边界。</li>
-<li>一定程度上，当 $x$ 满足条件时，比 $x$ 大或小的数不满足条件。</li>
-</ul>
-<h3 id="处理问题"><a href="#处理问题" class="headerlink" title="处理问题"></a>处理问题</h3><p>根据以上性质，可以按以下思路求解：</p>
-<ul>
-<li>首先，给出一段区间 $[1,N]$。</li>
-<li>之后，求出中间值 $mid$，并验证答案为 $mid$ 时是否满足条件。</li>
-<li>根据<strong>单调性</strong>，缩小区间。</li>
-</ul>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在使用二分答案过程中，需要注意以下问题：</p>
-<ul>
-<li>初始区间应该含最终结果。</li>
-<li>注意不能出现死循环。</li>
-<li>编写正确的验证答案算法。</li>
-</ul>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>对上述“数字炸弹（伪）”的演示：</p>
-<p>已知在 $[1,100]$ 的整数中，$78$ 以后是炸弹，求出最大的安全位置。</p>
-<p>虽然显然安全位置等于 $78-1$，但是此处为了演示，使用二分答案。</p>
-<ul>
-<li>定义二分搜索的上下界：下界是 $1$，上界是 $100$。</li>
-<li>二分搜索：在每一步中，我们计算中间值 $mid$，并检查它是否是安全位置（即是否小于或等于 $78$）。</li>
-<li>调整搜索范围：<ul>
-<li>如果 $mid$ 是安全位置，并且我们希望找到尽可能大的安全位置，那么我们将下界更新为 $mid + 1$ 并继续搜索。</li>
-<li>如果 $mid$ 不是安全位置，那么我们将上界更新为 $mid - 1$。</li>
-</ul>
-</li>
-<li>终止条件：当上下界相遇或错过时，搜索结束。</li>
-</ul>
-<p>以下是演示：</p>
-<ul>
-<li>$l&#x3D;1,r&#x3D;100,mid&#x3D;50$，此时 $mid$ 为较小值，$l \rightarrow mid + 1$。</li>
-<li>$l&#x3D;51,r&#x3D;100,mid&#x3D;75$，此时 $mid$ 为较小值，$l \rightarrow mid + 1$。</li>
-<li>$l&#x3D;76,r&#x3D;100,mid&#x3D;88$，此时 $mid$ 为较大值，$r \rightarrow mid - 1$。</li>
-<li>$l&#x3D;76,r&#x3D;87,mid&#x3D;81$，此时 $mid$ 为较大值，$r \rightarrow mid - 1$。</li>
-<li>$l&#x3D;76,r&#x3D;80,mid&#x3D;78$，此时 $mid$ 为较大值，$r \rightarrow mid - 1$。</li>
-<li>$l&#x3D;76,r&#x3D;77,mid&#x3D;76$，此时 $mid$ 为较小值，$l \rightarrow mid + 1$。</li>
-<li>$l&#x3D;77,r&#x3D;77,mid&#x3D;77$，此时 $l&#x3D;r$，查找结束。所求值为 $77$。</li>
-</ul>
 
       
     </div>
