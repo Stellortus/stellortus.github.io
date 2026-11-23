@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.stellortus.top","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.28.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="从“知道积分是求原函数”到独立计算，最需要补上的是方法选择。本文先用具体式子说明怎样判断，再把换元、分部积分和定积分中的常见处理展开成完整步骤。 文中的 $C$ 表示任意积分常数。微分符号 $\mathrm{d}$ 使用正体。所有运算都在原被积函数有定义的区间内进行，约分后也保留原定义域限制。 一、拿到积分后，先看什么1. 先用具体式子判断方向读表时先看中间一列，找出为什么会想到右边的动作。右边给">
+    <meta name="description" content="从“知道积分是求原函数”到独立计算，最需要补上的是方法选择。本文先用具体式子说明怎样判断，再把换元、分部积分和定积分中的常见处理展开成完整步骤。 文中的 $C$ 表示任意积分常数。微分符号 $\mathrm{d}$ 使用正体。所有运算都在原被积函数有定义的区间内进行，约分后也保留原定义域限制。 拿到积分后，先看什么先用具体式子判断方向读表时先看中间一列，找出为什么会想到右边的动作。右边给出起步，后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用积分方法总结">
 <meta property="og:url" content="https://www.stellortus.top/blog/bee21dafb91c/index.html">
 <meta property="og:site_name" content="Stellortus">
-<meta property="og:description" content="从“知道积分是求原函数”到独立计算，最需要补上的是方法选择。本文先用具体式子说明怎样判断，再把换元、分部积分和定积分中的常见处理展开成完整步骤。 文中的 $C$ 表示任意积分常数。微分符号 $\mathrm{d}$ 使用正体。所有运算都在原被积函数有定义的区间内进行，约分后也保留原定义域限制。 一、拿到积分后，先看什么1. 先用具体式子判断方向读表时先看中间一列，找出为什么会想到右边的动作。右边给">
+<meta property="og:description" content="从“知道积分是求原函数”到独立计算，最需要补上的是方法选择。本文先用具体式子说明怎样判断，再把换元、分部积分和定积分中的常见处理展开成完整步骤。 文中的 $C$ 表示任意积分常数。微分符号 $\mathrm{d}$ 使用正体。所有运算都在原被积函数有定义的区间内进行，约分后也保留原定义域限制。 拿到积分后，先看什么先用具体式子判断方向读表时先看中间一列，找出为什么会想到右边的动作。右边给出起步，后">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-11-23T14:40:24.000Z">
-<meta property="article:modified_time" content="2026-11-23T15:14:32.384Z">
+<meta property="article:modified_time" content="2026-11-23T15:18:28.748Z">
 <meta property="article:author" content="Stellortus">
 <meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
@@ -172,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8B%BF%E5%88%B0%E7%A7%AF%E5%88%86%E5%90%8E%EF%BC%8C%E5%85%88%E7%9C%8B%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">一、拿到积分后，先看什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%88%E7%94%A8%E5%85%B7%E4%BD%93%E5%BC%8F%E5%AD%90%E5%88%A4%E6%96%AD%E6%96%B9%E5%90%91"><span class="nav-number">1.1.</span> <span class="nav-text">1. 先用具体式子判断方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%AE%A1%E7%AE%97%E5%89%8D%E9%9C%80%E8%A6%81%E4%BC%9A%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">2. 计算前需要会用的基本公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%87%91%E5%BE%AE%E5%88%86%E4%B8%8E%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%8D%A2%E5%85%83"><span class="nav-number">2.</span> <span class="nav-text">二、凑微分与第一类换元</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E6%8A%8A%E4%B8%80%E4%B8%AA%E5%BC%8F%E5%AD%90%E6%95%B4%E4%BD%93%E6%8D%A2%E6%88%90%E5%AD%97%E6%AF%8D"><span class="nav-number">2.1.</span> <span class="nav-text">1. 为什么能把一个式子整体换成字母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B7%AE%E4%B8%80%E4%B8%AA%E5%B8%B8%E6%95%B0%E5%9B%A0%E5%AD%90%EF%BC%8C%E6%80%8E%E6%A0%B7%E8%A1%A5%E9%BD%90"><span class="nav-number">2.2.</span> <span class="nav-text">2. 差一个常数因子，怎样补齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AF%B9%E6%95%B0%E4%B8%8E%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%EF%BC%8C%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%BA%94%E8%AF%A5%E6%95%B4%E4%BD%93%E6%8D%A2%E5%85%83"><span class="nav-number">2.3.</span> <span class="nav-text">3. 对数与反三角函数，什么时候应该整体换元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%AF%B9%E6%95%B0%E3%80%81%E5%B9%82%E5%87%BD%E6%95%B0%E5%92%8C%E6%8C%87%E6%95%B0%E7%9A%84%E9%80%9A%E7%94%A8%E9%85%8D%E5%AF%B9"><span class="nav-number">2.4.</span> <span class="nav-text">4. 对数、幂函数和指数的通用配对</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%85%88%E5%81%9A%E4%BB%A3%E6%95%B0%E5%8C%96%E7%AE%80%EF%BC%8C%E5%86%8D%E7%A7%AF%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">三、先做代数化简，再积分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%88%86%E5%AD%90%E4%B8%8E%E5%88%86%E6%AF%8D%E6%8E%A5%E8%BF%91%E6%97%B6%EF%BC%8C%E5%85%88%E6%8B%86%E5%87%BA%E5%B8%B8%E6%95%B0%E9%A1%B9"><span class="nav-number">3.1.</span> <span class="nav-text">1. 分子与分母接近时，先拆出常数项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BA%8C%E6%AC%A1%E5%BC%8F%E5%85%88%E9%85%8D%E6%96%B9%EF%BC%8C%E5%86%8D%E8%AE%A4%E5%85%AC%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">2. 二次式先配方，再认公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%90%8C%E4%B8%80%E4%B8%AA%E5%88%86%E5%AD%90%E5%8F%AF%E4%BB%A5%E6%8B%86%E5%BC%80%EF%BC%8C%E5%88%86%E5%88%AB%E6%8D%A2%E5%85%83"><span class="nav-number">3.3.</span> <span class="nav-text">3. 同一个分子可以拆开，分别换元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%8F%8D%E5%A4%8D%E5%87%BA%E7%8E%B0%E5%90%8C%E4%B8%80%E4%B8%AA%E5%B9%82%EF%BC%8C%E5%B0%9D%E8%AF%95%E6%95%B4%E4%BD%93%E6%8D%A2%E6%8E%89"><span class="nav-number">3.4.</span> <span class="nav-text">4. 反复出现同一个幂，尝试整体换掉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%86%E6%AF%8D%E5%8F%8D%E5%A4%8D%E5%87%BA%E7%8E%B0-x-c-%E6%97%B6%EF%BC%8C%E5%85%88%E5%B9%B3%E7%A7%BB"><span class="nav-number">3.5.</span> <span class="nav-text">5. 分母反复出现 $x-c$ 时，先平移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%88%86%E6%AF%8D%E5%8F%AF%E5%88%86%E8%A7%A3%E6%97%B6%EF%BC%8C%E6%80%8E%E6%A0%B7%E6%8B%86%E9%83%A8%E5%88%86%E5%88%86%E5%BC%8F"><span class="nav-number">3.6.</span> <span class="nav-text">6. 分母可分解时，怎样拆部分分式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%A4%9A%E4%B8%AA%E6%8C%87%E6%95%B0%E9%A1%B9%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%8D%A2%E6%88%90%E5%90%8C%E4%B8%80%E4%B8%AA%E5%B9%82"><span class="nav-number">3.7.</span> <span class="nav-text">7. 多个指数项，可以换成同一个幂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E6%80%8E%E6%A0%B7%E9%80%89%E5%8F%98%E5%BD%A2"><span class="nav-number">4.</span> <span class="nav-text">四、三角函数积分怎样选变形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%AD%A3%E5%BC%A6%E3%80%81%E4%BD%99%E5%BC%A6%E7%9A%84%E5%A5%87%E6%95%B0%E6%AC%A1%E5%B9%82%EF%BC%8C%E7%95%99%E4%B8%80%E4%B8%AA%E5%9B%A0%E5%AD%90%E9%85%8D%E5%BE%AE%E5%88%86"><span class="nav-number">4.1.</span> <span class="nav-text">1. 正弦、余弦的奇数次幂，留一个因子配微分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%A4%E7%A7%8D%E5%B9%82%E9%83%BD%E6%98%AF%E5%81%B6%E6%95%B0%E6%97%B6%EF%BC%8C%E5%85%88%E9%99%8D%E5%B9%82"><span class="nav-number">4.2.</span> <span class="nav-text">2. 两种幂都是偶数时，先降幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%AD%A3%E5%88%87%E3%80%81%E6%AD%A3%E5%89%B2%E4%B8%8E%E4%BD%99%E5%88%87%E3%80%81%E4%BD%99%E5%89%B2%EF%BC%8C%E5%AF%BB%E6%89%BE%E5%AF%BC%E6%95%B0%E9%85%8D%E5%AF%B9"><span class="nav-number">4.3.</span> <span class="nav-text">3. 正切、正割与余切、余割，寻找导数配对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%B8%8D%E5%90%8C%E8%A7%92%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%8C%E5%85%88%E7%A7%AF%E5%8C%96%E5%92%8C%E5%B7%AE"><span class="nav-number">4.4.</span> <span class="nav-text">4. 不同角的乘积，先积化和差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%8D%8A%E8%A7%92%E4%BB%A3%E6%8D%A2%EF%BC%8C%E6%8A%8A%E4%B8%89%E8%A7%92%E5%88%86%E5%BC%8F%E5%8F%98%E6%88%90%E6%99%AE%E9%80%9A%E5%88%86%E5%BC%8F"><span class="nav-number">4.5.</span> <span class="nav-text">5. 半角代换，把三角分式变成普通分式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%AD%A3%E5%89%B2%E4%B8%8E%E4%BD%99%E5%89%B2%EF%BC%8C%E6%80%8E%E6%A0%B7%E5%87%91%E5%87%BA%E5%AF%B9%E6%95%B0"><span class="nav-number">4.6.</span> <span class="nav-text">6. 正割与余割，怎样凑出对数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%A0%B9%E5%BC%8F%E7%A7%AF%E5%88%86%EF%BC%8C%E6%80%8E%E6%A0%B7%E6%8A%8A%E6%A0%B9%E5%8F%B7%E6%B6%88%E6%8E%89"><span class="nav-number">5.</span> <span class="nav-text">五、根式积分，怎样把根号消掉</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A0%B9%E5%8F%B7%E9%87%8C%E6%98%AF%E4%B8%80%E6%AC%A1%E5%BC%8F%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8A%8A%E6%A0%B9%E5%BC%8F%E8%AE%BE%E4%B8%BA%E5%8F%98%E9%87%8F"><span class="nav-number">5.1.</span> <span class="nav-text">1. 根号里是一次式，直接把根式设为变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%B9%E5%8F%B7%E9%87%8C%E6%9C%89%E5%AF%B9%E6%95%B0%E6%88%96%E6%8C%87%E6%95%B0%EF%BC%8C%E4%B9%9F%E8%A6%81%E6%8A%8A%E5%AE%83%E4%BB%AC%E4%B8%80%E8%B5%B7%E6%9B%BF%E6%8D%A2"><span class="nav-number">5.2.</span> <span class="nav-text">2. 根号里有对数或指数，也要把它们一起替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BA%8C%E6%AC%A1%E6%A0%B9%E5%BC%8F%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E6%83%B3%E5%88%B0%E4%B8%89%E8%A7%92%E4%BB%A3%E6%8D%A2"><span class="nav-number">5.3.</span> <span class="nav-text">3. 二次根式，为什么想到三角代换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BA%8C%E6%AC%A1%E5%BC%8F%E6%9C%89%E4%B8%80%E6%AC%A1%E9%A1%B9%E6%97%B6%EF%BC%8C%E5%85%88%E5%B9%B3%E7%A7%BB"><span class="nav-number">5.4.</span> <span class="nav-text">4. 二次式有一次项时，先平移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%A0%B9%E5%BC%8F%E6%98%AF%E4%B8%A4%E4%B8%AA%E4%B8%80%E6%AC%A1%E5%BC%8F%E7%9A%84%E5%95%86%E6%97%B6"><span class="nav-number">5.5.</span> <span class="nav-text">5. 根式是两个一次式的商时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%A0%B9%E5%BC%8F%E5%A4%96%E6%9C%89-x-%E7%9A%84%E5%88%86%E6%AF%8D%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%B0%9D%E8%AF%95%E5%8F%96%E6%A0%B9%E5%BC%8F%E4%B8%8E-x-%E7%9A%84%E5%95%86"><span class="nav-number">5.6.</span> <span class="nav-text">6. 根式外有 $x$ 的分母时，可以尝试取根式与 $x$ 的商</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%8F%8C%E6%9B%B2%E5%87%BD%E6%95%B0%E4%BB%A3%E6%8D%A2%E7%9A%84%E8%A1%A5%E5%85%85"><span class="nav-number">5.7.</span> <span class="nav-text">7. 双曲函数代换的补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86%EF%BC%8C%E6%80%8E%E6%A0%B7%E9%80%89%E4%B8%A4%E9%83%A8%E5%88%86"><span class="nav-number">6.</span> <span class="nav-text">六、分部积分，怎样选两部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%88%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%E7%90%86%E8%A7%A3-u-%E4%B8%8E-mathrm-d-v"><span class="nav-number">6.1.</span> <span class="nav-text">1. 先通过一个例子理解 $u$ 与 $\mathrm{d}v$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A4%9A%E9%A1%B9%E5%BC%8F%E4%B9%98%E6%8C%87%E6%95%B0%E6%88%96%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%EF%BC%8C%E8%AE%A9%E5%A4%9A%E9%A1%B9%E5%BC%8F%E9%80%90%E6%AC%A1%E9%99%8D%E5%B9%82"><span class="nav-number">6.2.</span> <span class="nav-text">2. 多项式乘指数或三角函数，让多项式逐次降幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AF%B9%E6%95%B0%E6%88%96%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B8%B8%E5%B8%B8%E6%94%BE%E5%9C%A8%E6%B1%82%E5%AF%BC%E7%9A%84%E4%B8%80%E8%BE%B9"><span class="nav-number">6.3.</span> <span class="nav-text">3. 对数或反三角函数，常常放在求导的一边</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%BF%9E%E7%BB%AD%E5%88%86%E9%83%A8%E4%B8%A4%E6%AC%A1%EF%BC%8C%E5%8E%9F%E7%A7%AF%E5%88%86%E5%87%BA%E7%8E%B0%E5%90%8E%E7%A7%BB%E9%A1%B9"><span class="nav-number">6.4.</span> <span class="nav-text">4. 连续分部两次，原积分出现后移项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%8D%A2%E5%85%83%E5%90%8E%E5%86%8D%E5%88%86%E9%83%A8%EF%BC%8C%E6%8C%89%E9%A1%BA%E5%BA%8F%E5%AE%8C%E6%88%90%E4%B8%A4%E6%AC%A1%E7%AE%80%E5%8C%96"><span class="nav-number">6.5.</span> <span class="nav-text">5. 换元后再分部，按顺序完成两次简化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%85%88%E9%80%89%E5%87%BA%E8%83%BD%E7%BA%A6%E7%AE%80%E7%9A%84%E5%8E%9F%E5%87%BD%E6%95%B0%EF%BC%8C%E5%86%8D%E5%88%86%E9%83%A8"><span class="nav-number">6.6.</span> <span class="nav-text">6. 先选出能约简的原函数，再分部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E5%B9%B3%E6%96%B9%EF%BC%8C%E5%88%86%E4%B8%A4%E5%B1%82%E5%A4%84%E7%90%86"><span class="nav-number">6.7.</span> <span class="nav-text">7. 反三角函数的平方，分两层处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E6%8D%A2%E5%85%83%E3%80%81%E5%88%86%E9%83%A8%E4%B8%8E%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="nav-number">7.</span> <span class="nav-text">七、定积分中的换元、分部与对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8D%A2%E5%85%83%E6%97%B6%EF%BC%8C%E4%B8%8A%E4%B8%8B%E9%99%90%E6%80%8E%E6%A0%B7%E4%B8%80%E8%B5%B7%E6%94%B9%E5%8F%98"><span class="nav-number">7.1.</span> <span class="nav-text">1. 换元时，上下限怎样一起改变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AE%9A%E7%A7%AF%E5%88%86%E5%88%86%E9%83%A8%EF%BC%8C%E8%BE%B9%E7%95%8C%E9%A1%B9%E5%BF%85%E9%A1%BB%E7%AE%97%E4%B8%A4%E6%AC%A1"><span class="nav-number">7.2.</span> <span class="nav-text">2. 定积分分部，边界项必须算两次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%A0%B9%E5%8F%B7%E4%B8%8B%E5%87%BA%E7%8E%B0%E5%B9%B3%E6%96%B9%EF%BC%8C%E5%85%88%E4%BF%9D%E7%95%99%E7%BB%9D%E5%AF%B9%E5%80%BC"><span class="nav-number">7.3.</span> <span class="nav-text">3. 根号下出现平方，先保留绝对值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%AF%B9%E7%A7%B0%E5%8C%BA%E9%97%B4%EF%BC%8C%E5%85%88%E5%88%A4%E6%96%AD%E5%A5%87%E5%81%B6%E6%80%A7"><span class="nav-number">7.4.</span> <span class="nav-text">4. 对称区间，先判断奇偶性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%8C%BA%E9%97%B4%E5%8F%8D%E5%B0%84%EF%BC%8C%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%E7%9B%B8%E5%8A%A0%E6%B6%88%E6%8E%89-x"><span class="nav-number">7.5.</span> <span class="nav-text">5. 区间反射，两种写法相加消掉 $x$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%A4%9A%E4%B8%AA%E5%91%A8%E6%9C%9F%EF%BC%8C%E5%85%88%E7%AE%97%E4%B8%80%E4%B8%AA%E5%91%A8%E6%9C%9F"><span class="nav-number">7.6.</span> <span class="nav-text">6. 多个周期，先算一个周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%B9%B3%E7%A7%BB%E4%B8%80%E6%AE%B5%E5%90%8E%E5%8F%98%E5%8F%B7%EF%BC%8C%E7%9B%B8%E9%82%BB%E4%B8%A4%E6%AE%B5%E6%8A%B5%E6%B6%88"><span class="nav-number">7.7.</span> <span class="nav-text">7. 平移一段后变号，相邻两段抵消</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E8%AF%81%E6%98%8E%E7%A7%AF%E5%88%86%E7%AD%89%E5%BC%8F%EF%BC%8C%E6%8C%89%E5%8C%BA%E9%97%B4%E6%88%96%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E5%8C%96%E9%80%89%E4%BB%A3%E6%8D%A2"><span class="nav-number">7.8.</span> <span class="nav-text">8. 证明积分等式，按区间或函数的变化选代换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F%E4%B8%8E%E5%8E%9F%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%8D%E5%90%91%E8%AF%86%E5%88%AB"><span class="nav-number">8.</span> <span class="nav-text">八、递推公式与原函数的反向识别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88"><span class="nav-number">8.1.</span> <span class="nav-text">1. 递推公式在做什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%AD%A3%E5%BC%A6%E5%B9%82%E7%9A%84%E5%AE%9A%E7%A7%AF%E5%88%86%EF%BC%8C%E6%80%8E%E6%A0%B7%E9%99%8D%E4%BD%8E%E4%B8%A4%E6%AC%A1%E5%B9%82"><span class="nav-number">8.2.</span> <span class="nav-text">2. 正弦幂的定积分，怎样降低两次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%B9%B3%E6%96%B9%E5%92%8C%E7%9A%84%E9%AB%98%E6%AC%A1%E5%88%86%E6%AF%8D%EF%BC%8C%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E9%80%92%E6%8E%A8"><span class="nav-number">8.3.</span> <span class="nav-text">3. 平方和的高次分母，怎样建立递推</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%AD%A3%E5%88%87%E5%B9%82%E4%B8%8E%E4%BD%99%E5%89%B2%E5%B9%82%E7%9A%84%E9%80%92%E6%8E%A8"><span class="nav-number">8.4.</span> <span class="nav-text">4. 正切幂与余割幂的递推</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%8F%8D%E5%90%91%E4%BD%BF%E7%94%A8%E4%B9%98%E7%A7%AF%E3%80%81%E5%95%86%E7%9A%84%E6%B1%82%E5%AF%BC%E5%85%AC%E5%BC%8F"><span class="nav-number">8.5.</span> <span class="nav-text">5. 反向使用乘积、商的求导公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E6%80%8E%E6%A0%B7%E6%A3%80%E6%9F%A5%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AD%94%E6%A1%88"><span class="nav-number">9.</span> <span class="nav-text">九、怎样检查自己的答案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AF%B9%E5%8E%9F%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC%EF%BC%8C%E6%A3%80%E6%9F%A5%E5%B8%B8%E6%95%B0%E5%9B%A0%E5%AD%90%E5%92%8C%E8%B4%9F%E5%8F%B7"><span class="nav-number">9.1.</span> <span class="nav-text">1. 对原函数求导，检查常数因子和负号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%8D%A2%E5%85%83%E5%90%8E%E6%A3%80%E6%9F%A5%E4%B8%89%E4%B8%AA%E4%BD%8D%E7%BD%AE"><span class="nav-number">9.2.</span> <span class="nav-text">2. 换元后检查三个位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BF%9D%E7%95%99%E5%AE%9A%E4%B9%89%E5%9F%9F%E4%B8%8E%E7%A7%AF%E5%88%86%E5%B8%B8%E6%95%B0"><span class="nav-number">9.3.</span> <span class="nav-text">3. 保留定义域与积分常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E6%95%B0%E5%80%BC%E6%98%AF%E5%90%A6%E7%AC%A6%E5%90%88%E7%AC%A6%E5%8F%B7%E5%92%8C%E5%A4%A7%E5%B0%8F"><span class="nav-number">9.4.</span> <span class="nav-text">4. 定积分的数值是否符合符号和大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%86%E9%83%A8%E4%BB%A5%E5%90%8E%EF%BC%8C%E7%9C%8B%E7%9C%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E6%AD%A3%E5%87%8F%E5%B0%91%E4%BA%86%E8%AE%A1%E7%AE%97"><span class="nav-number">9.5.</span> <span class="nav-text">5. 分部以后，看看是否真正减少了计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%9C%89%E4%BA%9B%E5%8E%9F%E5%87%BD%E6%95%B0%E9%9C%80%E8%A6%81%E7%94%A8%E7%A7%AF%E5%88%86%E6%9C%AC%E8%BA%AB%E8%A1%A8%E7%A4%BA"><span class="nav-number">9.6.</span> <span class="nav-text">6. 有些原函数需要用积分本身表示</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%BF%E5%88%B0%E7%A7%AF%E5%88%86%E5%90%8E%EF%BC%8C%E5%85%88%E7%9C%8B%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">拿到积分后，先看什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E7%94%A8%E5%85%B7%E4%BD%93%E5%BC%8F%E5%AD%90%E5%88%A4%E6%96%AD%E6%96%B9%E5%90%91"><span class="nav-number">1.1.</span> <span class="nav-text">先用具体式子判断方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%89%8D%E9%9C%80%E8%A6%81%E4%BC%9A%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">计算前需要会用的基本公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%91%E5%BE%AE%E5%88%86%E4%B8%8E%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%8D%A2%E5%85%83"><span class="nav-number">2.</span> <span class="nav-text">凑微分与第一类换元</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E6%8A%8A%E4%B8%80%E4%B8%AA%E5%BC%8F%E5%AD%90%E6%95%B4%E4%BD%93%E6%8D%A2%E6%88%90%E5%AD%97%E6%AF%8D"><span class="nav-number">2.1.</span> <span class="nav-text">为什么能把一个式子整体换成字母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E4%B8%80%E4%B8%AA%E5%B8%B8%E6%95%B0%E5%9B%A0%E5%AD%90%EF%BC%8C%E6%80%8E%E6%A0%B7%E8%A1%A5%E9%BD%90"><span class="nav-number">2.2.</span> <span class="nav-text">差一个常数因子，怎样补齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%95%B0%E4%B8%8E%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%EF%BC%8C%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%BA%94%E8%AF%A5%E6%95%B4%E4%BD%93%E6%8D%A2%E5%85%83"><span class="nav-number">2.3.</span> <span class="nav-text">对数与反三角函数，什么时候应该整体换元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%95%B0%E3%80%81%E5%B9%82%E5%87%BD%E6%95%B0%E5%92%8C%E6%8C%87%E6%95%B0%E7%9A%84%E9%80%9A%E7%94%A8%E9%85%8D%E5%AF%B9"><span class="nav-number">2.4.</span> <span class="nav-text">对数、幂函数和指数的通用配对</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E5%81%9A%E4%BB%A3%E6%95%B0%E5%8C%96%E7%AE%80%EF%BC%8C%E5%86%8D%E7%A7%AF%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">先做代数化简，再积分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%AD%90%E4%B8%8E%E5%88%86%E6%AF%8D%E6%8E%A5%E8%BF%91%E6%97%B6%EF%BC%8C%E5%85%88%E6%8B%86%E5%87%BA%E5%B8%B8%E6%95%B0%E9%A1%B9"><span class="nav-number">3.1.</span> <span class="nav-text">分子与分母接近时，先拆出常数项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%BC%8F%E5%85%88%E9%85%8D%E6%96%B9%EF%BC%8C%E5%86%8D%E8%AE%A4%E5%85%AC%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">二次式先配方，再认公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E4%B8%80%E4%B8%AA%E5%88%86%E5%AD%90%E5%8F%AF%E4%BB%A5%E6%8B%86%E5%BC%80%EF%BC%8C%E5%88%86%E5%88%AB%E6%8D%A2%E5%85%83"><span class="nav-number">3.3.</span> <span class="nav-text">同一个分子可以拆开，分别换元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%A4%8D%E5%87%BA%E7%8E%B0%E5%90%8C%E4%B8%80%E4%B8%AA%E5%B9%82%EF%BC%8C%E5%B0%9D%E8%AF%95%E6%95%B4%E4%BD%93%E6%8D%A2%E6%8E%89"><span class="nav-number">3.4.</span> <span class="nav-text">反复出现同一个幂，尝试整体换掉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AF%8D%E5%8F%8D%E5%A4%8D%E5%87%BA%E7%8E%B0-x-c-%E6%97%B6%EF%BC%8C%E5%85%88%E5%B9%B3%E7%A7%BB"><span class="nav-number">3.5.</span> <span class="nav-text">分母反复出现 $x-c$ 时，先平移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AF%8D%E5%8F%AF%E5%88%86%E8%A7%A3%E6%97%B6%EF%BC%8C%E6%80%8E%E6%A0%B7%E6%8B%86%E9%83%A8%E5%88%86%E5%88%86%E5%BC%8F"><span class="nav-number">3.6.</span> <span class="nav-text">分母可分解时，怎样拆部分分式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%8C%87%E6%95%B0%E9%A1%B9%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%8D%A2%E6%88%90%E5%90%8C%E4%B8%80%E4%B8%AA%E5%B9%82"><span class="nav-number">3.7.</span> <span class="nav-text">多个指数项，可以换成同一个幂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E6%80%8E%E6%A0%B7%E9%80%89%E5%8F%98%E5%BD%A2"><span class="nav-number">4.</span> <span class="nav-text">三角函数积分怎样选变形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%BC%A6%E3%80%81%E4%BD%99%E5%BC%A6%E7%9A%84%E5%A5%87%E6%95%B0%E6%AC%A1%E5%B9%82%EF%BC%8C%E7%95%99%E4%B8%80%E4%B8%AA%E5%9B%A0%E5%AD%90%E9%85%8D%E5%BE%AE%E5%88%86"><span class="nav-number">4.1.</span> <span class="nav-text">正弦、余弦的奇数次幂，留一个因子配微分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%B9%82%E9%83%BD%E6%98%AF%E5%81%B6%E6%95%B0%E6%97%B6%EF%BC%8C%E5%85%88%E9%99%8D%E5%B9%82"><span class="nav-number">4.2.</span> <span class="nav-text">两种幂都是偶数时，先降幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%87%E3%80%81%E6%AD%A3%E5%89%B2%E4%B8%8E%E4%BD%99%E5%88%87%E3%80%81%E4%BD%99%E5%89%B2%EF%BC%8C%E5%AF%BB%E6%89%BE%E5%AF%BC%E6%95%B0%E9%85%8D%E5%AF%B9"><span class="nav-number">4.3.</span> <span class="nav-text">正切、正割与余切、余割，寻找导数配对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E8%A7%92%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%8C%E5%85%88%E7%A7%AF%E5%8C%96%E5%92%8C%E5%B7%AE"><span class="nav-number">4.4.</span> <span class="nav-text">不同角的乘积，先积化和差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E8%A7%92%E4%BB%A3%E6%8D%A2%EF%BC%8C%E6%8A%8A%E4%B8%89%E8%A7%92%E5%88%86%E5%BC%8F%E5%8F%98%E6%88%90%E6%99%AE%E9%80%9A%E5%88%86%E5%BC%8F"><span class="nav-number">4.5.</span> <span class="nav-text">半角代换，把三角分式变成普通分式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%89%B2%E4%B8%8E%E4%BD%99%E5%89%B2%EF%BC%8C%E6%80%8E%E6%A0%B7%E5%87%91%E5%87%BA%E5%AF%B9%E6%95%B0"><span class="nav-number">4.6.</span> <span class="nav-text">正割与余割，怎样凑出对数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E5%BC%8F%E7%A7%AF%E5%88%86%EF%BC%8C%E6%80%8E%E6%A0%B7%E6%8A%8A%E6%A0%B9%E5%8F%B7%E6%B6%88%E6%8E%89"><span class="nav-number">5.</span> <span class="nav-text">根式积分，怎样把根号消掉</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%8F%B7%E9%87%8C%E6%98%AF%E4%B8%80%E6%AC%A1%E5%BC%8F%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8A%8A%E6%A0%B9%E5%BC%8F%E8%AE%BE%E4%B8%BA%E5%8F%98%E9%87%8F"><span class="nav-number">5.1.</span> <span class="nav-text">根号里是一次式，直接把根式设为变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%8F%B7%E9%87%8C%E6%9C%89%E5%AF%B9%E6%95%B0%E6%88%96%E6%8C%87%E6%95%B0%EF%BC%8C%E4%B9%9F%E8%A6%81%E6%8A%8A%E5%AE%83%E4%BB%AC%E4%B8%80%E8%B5%B7%E6%9B%BF%E6%8D%A2"><span class="nav-number">5.2.</span> <span class="nav-text">根号里有对数或指数，也要把它们一起替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E6%A0%B9%E5%BC%8F%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E6%83%B3%E5%88%B0%E4%B8%89%E8%A7%92%E4%BB%A3%E6%8D%A2"><span class="nav-number">5.3.</span> <span class="nav-text">二次根式，为什么想到三角代换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%BC%8F%E6%9C%89%E4%B8%80%E6%AC%A1%E9%A1%B9%E6%97%B6%EF%BC%8C%E5%85%88%E5%B9%B3%E7%A7%BB"><span class="nav-number">5.4.</span> <span class="nav-text">二次式有一次项时，先平移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%BC%8F%E6%98%AF%E4%B8%A4%E4%B8%AA%E4%B8%80%E6%AC%A1%E5%BC%8F%E7%9A%84%E5%95%86%E6%97%B6"><span class="nav-number">5.5.</span> <span class="nav-text">根式是两个一次式的商时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%BC%8F%E5%A4%96%E6%9C%89-x-%E7%9A%84%E5%88%86%E6%AF%8D%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%B0%9D%E8%AF%95%E5%8F%96%E6%A0%B9%E5%BC%8F%E4%B8%8E-x-%E7%9A%84%E5%95%86"><span class="nav-number">5.6.</span> <span class="nav-text">根式外有 $x$ 的分母时，可以尝试取根式与 $x$ 的商</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%9B%B2%E5%87%BD%E6%95%B0%E4%BB%A3%E6%8D%A2%E7%9A%84%E8%A1%A5%E5%85%85"><span class="nav-number">5.7.</span> <span class="nav-text">双曲函数代换的补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86%EF%BC%8C%E6%80%8E%E6%A0%B7%E9%80%89%E4%B8%A4%E9%83%A8%E5%88%86"><span class="nav-number">6.</span> <span class="nav-text">分部积分，怎样选两部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%E7%90%86%E8%A7%A3-u-%E4%B8%8E-mathrm-d-v"><span class="nav-number">6.1.</span> <span class="nav-text">先通过一个例子理解 $u$ 与 $\mathrm{d}v$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E4%B9%98%E6%8C%87%E6%95%B0%E6%88%96%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%EF%BC%8C%E8%AE%A9%E5%A4%9A%E9%A1%B9%E5%BC%8F%E9%80%90%E6%AC%A1%E9%99%8D%E5%B9%82"><span class="nav-number">6.2.</span> <span class="nav-text">多项式乘指数或三角函数，让多项式逐次降幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%95%B0%E6%88%96%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B8%B8%E5%B8%B8%E6%94%BE%E5%9C%A8%E6%B1%82%E5%AF%BC%E7%9A%84%E4%B8%80%E8%BE%B9"><span class="nav-number">6.3.</span> <span class="nav-text">对数或反三角函数，常常放在求导的一边</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%83%A8%E4%B8%A4%E6%AC%A1%EF%BC%8C%E5%8E%9F%E7%A7%AF%E5%88%86%E5%87%BA%E7%8E%B0%E5%90%8E%E7%A7%BB%E9%A1%B9"><span class="nav-number">6.4.</span> <span class="nav-text">连续分部两次，原积分出现后移项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E5%85%83%E5%90%8E%E5%86%8D%E5%88%86%E9%83%A8%EF%BC%8C%E6%8C%89%E9%A1%BA%E5%BA%8F%E5%AE%8C%E6%88%90%E4%B8%A4%E6%AC%A1%E7%AE%80%E5%8C%96"><span class="nav-number">6.5.</span> <span class="nav-text">换元后再分部，按顺序完成两次简化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E9%80%89%E5%87%BA%E8%83%BD%E7%BA%A6%E7%AE%80%E7%9A%84%E5%8E%9F%E5%87%BD%E6%95%B0%EF%BC%8C%E5%86%8D%E5%88%86%E9%83%A8"><span class="nav-number">6.6.</span> <span class="nav-text">先选出能约简的原函数，再分部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E5%B9%B3%E6%96%B9%EF%BC%8C%E5%88%86%E4%B8%A4%E5%B1%82%E5%A4%84%E7%90%86"><span class="nav-number">6.7.</span> <span class="nav-text">反三角函数的平方，分两层处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E6%8D%A2%E5%85%83%E3%80%81%E5%88%86%E9%83%A8%E4%B8%8E%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="nav-number">7.</span> <span class="nav-text">定积分中的换元、分部与对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E5%85%83%E6%97%B6%EF%BC%8C%E4%B8%8A%E4%B8%8B%E9%99%90%E6%80%8E%E6%A0%B7%E4%B8%80%E8%B5%B7%E6%94%B9%E5%8F%98"><span class="nav-number">7.1.</span> <span class="nav-text">换元时，上下限怎样一起改变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86%E5%88%86%E9%83%A8%EF%BC%8C%E8%BE%B9%E7%95%8C%E9%A1%B9%E5%BF%85%E9%A1%BB%E7%AE%97%E4%B8%A4%E6%AC%A1"><span class="nav-number">7.2.</span> <span class="nav-text">定积分分部，边界项必须算两次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%8F%B7%E4%B8%8B%E5%87%BA%E7%8E%B0%E5%B9%B3%E6%96%B9%EF%BC%8C%E5%85%88%E4%BF%9D%E7%95%99%E7%BB%9D%E5%AF%B9%E5%80%BC"><span class="nav-number">7.3.</span> <span class="nav-text">根号下出现平方，先保留绝对值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%8C%BA%E9%97%B4%EF%BC%8C%E5%85%88%E5%88%A4%E6%96%AD%E5%A5%87%E5%81%B6%E6%80%A7"><span class="nav-number">7.4.</span> <span class="nav-text">对称区间，先判断奇偶性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E5%8F%8D%E5%B0%84%EF%BC%8C%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%E7%9B%B8%E5%8A%A0%E6%B6%88%E6%8E%89-x"><span class="nav-number">7.5.</span> <span class="nav-text">区间反射，两种写法相加消掉 $x$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E5%91%A8%E6%9C%9F%EF%BC%8C%E5%85%88%E7%AE%97%E4%B8%80%E4%B8%AA%E5%91%A8%E6%9C%9F"><span class="nav-number">7.6.</span> <span class="nav-text">多个周期，先算一个周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E7%A7%BB%E4%B8%80%E6%AE%B5%E5%90%8E%E5%8F%98%E5%8F%B7%EF%BC%8C%E7%9B%B8%E9%82%BB%E4%B8%A4%E6%AE%B5%E6%8A%B5%E6%B6%88"><span class="nav-number">7.7.</span> <span class="nav-text">平移一段后变号，相邻两段抵消</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E7%A7%AF%E5%88%86%E7%AD%89%E5%BC%8F%EF%BC%8C%E6%8C%89%E5%8C%BA%E9%97%B4%E6%88%96%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E5%8C%96%E9%80%89%E4%BB%A3%E6%8D%A2"><span class="nav-number">7.8.</span> <span class="nav-text">证明积分等式，按区间或函数的变化选代换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F%E4%B8%8E%E5%8E%9F%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%8D%E5%90%91%E8%AF%86%E5%88%AB"><span class="nav-number">8.</span> <span class="nav-text">递推公式与原函数的反向识别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88"><span class="nav-number">8.1.</span> <span class="nav-text">递推公式在做什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%BC%A6%E5%B9%82%E7%9A%84%E5%AE%9A%E7%A7%AF%E5%88%86%EF%BC%8C%E6%80%8E%E6%A0%B7%E9%99%8D%E4%BD%8E%E4%B8%A4%E6%AC%A1%E5%B9%82"><span class="nav-number">8.2.</span> <span class="nav-text">正弦幂的定积分，怎样降低两次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E6%96%B9%E5%92%8C%E7%9A%84%E9%AB%98%E6%AC%A1%E5%88%86%E6%AF%8D%EF%BC%8C%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E9%80%92%E6%8E%A8"><span class="nav-number">8.3.</span> <span class="nav-text">平方和的高次分母，怎样建立递推</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%87%E5%B9%82%E4%B8%8E%E4%BD%99%E5%89%B2%E5%B9%82%E7%9A%84%E9%80%92%E6%8E%A8"><span class="nav-number">8.4.</span> <span class="nav-text">正切幂与余割幂的递推</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BD%BF%E7%94%A8%E4%B9%98%E7%A7%AF%E3%80%81%E5%95%86%E7%9A%84%E6%B1%82%E5%AF%BC%E5%85%AC%E5%BC%8F"><span class="nav-number">8.5.</span> <span class="nav-text">反向使用乘积、商的求导公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E6%A0%B7%E6%A3%80%E6%9F%A5%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AD%94%E6%A1%88"><span class="nav-number">9.</span> <span class="nav-text">怎样检查自己的答案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8E%9F%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC%EF%BC%8C%E6%A3%80%E6%9F%A5%E5%B8%B8%E6%95%B0%E5%9B%A0%E5%AD%90%E5%92%8C%E8%B4%9F%E5%8F%B7"><span class="nav-number">9.1.</span> <span class="nav-text">对原函数求导，检查常数因子和负号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E5%85%83%E5%90%8E%E6%A3%80%E6%9F%A5%E4%B8%89%E4%B8%AA%E4%BD%8D%E7%BD%AE"><span class="nav-number">9.2.</span> <span class="nav-text">换元后检查三个位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E7%95%99%E5%AE%9A%E4%B9%89%E5%9F%9F%E4%B8%8E%E7%A7%AF%E5%88%86%E5%B8%B8%E6%95%B0"><span class="nav-number">9.3.</span> <span class="nav-text">保留定义域与积分常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E6%95%B0%E5%80%BC%E6%98%AF%E5%90%A6%E7%AC%A6%E5%90%88%E7%AC%A6%E5%8F%B7%E5%92%8C%E5%A4%A7%E5%B0%8F"><span class="nav-number">9.4.</span> <span class="nav-text">定积分的数值是否符合符号和大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%83%A8%E4%BB%A5%E5%90%8E%EF%BC%8C%E7%9C%8B%E7%9C%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E6%AD%A3%E5%87%8F%E5%B0%91%E4%BA%86%E8%AE%A1%E7%AE%97"><span class="nav-number">9.5.</span> <span class="nav-text">分部以后，看看是否真正减少了计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E4%BA%9B%E5%8E%9F%E5%87%BD%E6%95%B0%E9%9C%80%E8%A6%81%E7%94%A8%E7%A7%AF%E5%88%86%E6%9C%AC%E8%BA%AB%E8%A1%A8%E7%A4%BA"><span class="nav-number">9.6.</span> <span class="nav-text">有些原函数需要用积分本身表示</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -281,7 +281,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2026-11-23 22:40:24 / Modified: 23:14:32" itemprop="dateCreated datePublished" datetime="2026-11-23T22:40:24+08:00">2026-11-23</time>
+      <time title="Created: 2026-11-23 22:40:24 / Modified: 23:18:28" itemprop="dateCreated datePublished" datetime="2026-11-23T22:40:24+08:00">2026-11-23</time>
     </span>
 
   
@@ -302,7 +302,7 @@
     
     <div class="post-body" itemprop="articleBody"><p>从“知道积分是求原函数”到独立计算，最需要补上的是方法选择。本文先用具体式子说明怎样判断，再把换元、分部积分和定积分中的常见处理展开成完整步骤。</p>
 <p>文中的 $C$ 表示任意积分常数。微分符号 $\mathrm{d}$ 使用正体。所有运算都在原被积函数有定义的区间内进行，约分后也保留原定义域限制。</p>
-<h2 id="一、拿到积分后，先看什么"><a href="#一、拿到积分后，先看什么" class="headerlink" title="一、拿到积分后，先看什么"></a>一、拿到积分后，先看什么</h2><h3 id="1-先用具体式子判断方向"><a href="#1-先用具体式子判断方向" class="headerlink" title="1. 先用具体式子判断方向"></a>1. 先用具体式子判断方向</h3><p>读表时先看中间一列，找出为什么会想到右边的动作。右边给出起步，后面的各节将相应方法算到结果。</p>
+<h2 id="拿到积分后，先看什么"><a href="#拿到积分后，先看什么" class="headerlink" title="拿到积分后，先看什么"></a>拿到积分后，先看什么</h2><h3 id="先用具体式子判断方向"><a href="#先用具体式子判断方向" class="headerlink" title="先用具体式子判断方向"></a>先用具体式子判断方向</h3><p>读表时先看中间一列，找出为什么会想到右边的动作。右边给出起步，后面的各节将相应方法算到结果。</p>
 <table>
 <thead>
 <tr>
@@ -363,7 +363,7 @@
 </tr>
 </tbody></table>
 <p>同一题有时需要连续使用两种方法。例如根式换元后可能得到一个分式，下一步还要拆分。分部后也可能需要凑微分。每做一步，都重新观察剩下的积分。</p>
-<h3 id="2-计算前需要会用的基本公式"><a href="#2-计算前需要会用的基本公式" class="headerlink" title="2. 计算前需要会用的基本公式"></a>2. 计算前需要会用的基本公式</h3><p>求不定积分，就是寻找一个函数，使它的导数等于被积函数。比如 $(x^3)’&#x3D;3x^2$，所以 $\displaystyle \int3x^2,\mathrm{d}x&#x3D;x^3+C$。</p>
+<h3 id="计算前需要会用的基本公式"><a href="#计算前需要会用的基本公式" class="headerlink" title="计算前需要会用的基本公式"></a>计算前需要会用的基本公式</h3><p>求不定积分，就是寻找一个函数，使它的导数等于被积函数。比如 $(x^3)’&#x3D;3x^2$，所以 $\displaystyle \int3x^2,\mathrm{d}x&#x3D;x^3+C$。</p>
 <table>
 <thead>
 <tr>
@@ -424,13 +424,13 @@
 <p>算定积分时，若 $F’(x)&#x3D;f(x)$，则</p>
 <p>$$<br>\int_a^b f(x),\mathrm{d}x&#x3D;F(b)-F(a).<br>$$</p>
 <p>也可写为 $[F(x)]_a^b$。例如 $\displaystyle \int_0^1x^2,\mathrm{d}x&#x3D;\left[\dfrac{x^3}{3}\right]_0^1&#x3D;\dfrac{1}{3}$，代入上限后减去代入下限的值。</p>
-<h2 id="二、凑微分与第一类换元"><a href="#二、凑微分与第一类换元" class="headerlink" title="二、凑微分与第一类换元"></a>二、凑微分与第一类换元</h2><h3 id="1-为什么能把一个式子整体换成字母"><a href="#1-为什么能把一个式子整体换成字母" class="headerlink" title="1. 为什么能把一个式子整体换成字母"></a>1. 为什么能把一个式子整体换成字母</h3><p>以 $\displaystyle \int\dfrac{2x}{1+x^2},\mathrm{d}x$ 为例。因为 $1+x^2$ 的导数是 $2x$，令</p>
+<h2 id="凑微分与第一类换元"><a href="#凑微分与第一类换元" class="headerlink" title="凑微分与第一类换元"></a>凑微分与第一类换元</h2><h3 id="为什么能把一个式子整体换成字母"><a href="#为什么能把一个式子整体换成字母" class="headerlink" title="为什么能把一个式子整体换成字母"></a>为什么能把一个式子整体换成字母</h3><p>以 $\displaystyle \int\dfrac{2x}{1+x^2},\mathrm{d}x$ 为例。因为 $1+x^2$ 的导数是 $2x$，令</p>
 <p>$$<br>u&#x3D;1+x^2,\qquad \mathrm{d}u&#x3D;2x,\mathrm{d}x.<br>$$</p>
 <p>分母变为 $u$，分子连同微分 $2x,\mathrm{d}x$ 变为 $\mathrm{d}u$，所以</p>
 <p>$$<br>\int\dfrac{2x}{1+x^2},\mathrm{d}x<br>&#x3D;\int\dfrac{\mathrm{d}u}{u}<br>&#x3D;\ln\lvert u\rvert+C<br>&#x3D;\ln(1+x^2)+C.<br>$$</p>
 <p>这里 $u$ 是为了简化计算临时取的新变量，求完原函数后要换回 $x$。由于 $1+x^2&gt;0$，最后的对数可以去掉绝对值。</p>
 <p>这种做法来自链式法则，$[F(g(x))]’&#x3D;F’(g(x))g’(x)$。积分中若同时出现内层函数 $g(x)$ 和配套的导数因子 $g’(x)$，就可以令 $u&#x3D;g(x)$。<strong>检查时把 $\mathrm{d}u$ 写出来，再确认所有因子都已替换。</strong></p>
-<h3 id="2-差一个常数因子，怎样补齐"><a href="#2-差一个常数因子，怎样补齐" class="headerlink" title="2. 差一个常数因子，怎样补齐"></a>2. 差一个常数因子，怎样补齐</h3><p><strong>例　计算 $\displaystyle\int x^2(3+2x^3)^{\frac{1}{6}},\mathrm{d}x$。</strong></p>
+<h3 id="差一个常数因子，怎样补齐"><a href="#差一个常数因子，怎样补齐" class="headerlink" title="差一个常数因子，怎样补齐"></a>差一个常数因子，怎样补齐</h3><p><strong>例　计算 $\displaystyle\int x^2(3+2x^3)^{\frac{1}{6}},\mathrm{d}x$。</strong></p>
 <p>式子中反复出现的整体是 $3+2x^3$，其导数为 $6x^2$，与前面的 $x^2$ 只差常数 $6$。令</p>
 <p>$$<br>u&#x3D;3+2x^3,\qquad \mathrm{d}u&#x3D;6x^2,\mathrm{d}x,<br>\qquad x^2,\mathrm{d}x&#x3D;\dfrac16\mathrm{d}u.<br>$$</p>
 <p>于是</p>
@@ -441,7 +441,7 @@
 <p>$$<br>\int(ax+b)^p,\mathrm{d}x&#x3D;\dfrac{(ax+b)^{p+1}}{a(p+1)}+C\quad(p\ne-1),<br>$$</p>
 <p>$$<br>\int\dfrac{\mathrm{d}x}{ax+b}&#x3D;\dfrac1a\ln\lvert ax+b\rvert+C.<br>$$</p>
 <p>参数使 $a&#x3D;0$ 时，先将原式作为常数函数处理。</p>
-<h3 id="3-对数与反三角函数，什么时候应该整体换元"><a href="#3-对数与反三角函数，什么时候应该整体换元" class="headerlink" title="3. 对数与反三角函数，什么时候应该整体换元"></a>3. 对数与反三角函数，什么时候应该整体换元</h3><p>判断依据是“这个函数的导数是否也在积分里”。下表第三列给出具体例子，第四列说明配对理由。</p>
+<h3 id="对数与反三角函数，什么时候应该整体换元"><a href="#对数与反三角函数，什么时候应该整体换元" class="headerlink" title="对数与反三角函数，什么时候应该整体换元"></a>对数与反三角函数，什么时候应该整体换元</h3><p>判断依据是“这个函数的导数是否也在积分里”。下表第三列给出具体例子，第四列说明配对理由。</p>
 <table>
 <thead>
 <tr>
@@ -497,18 +497,18 @@
 <p>令 $u&#x3D;\arccos\left(\dfrac{x}{2}\right)$，则 $\dfrac{\mathrm{d}x}{\sqrt{4-x^2}}&#x3D;-\mathrm{d}u$，所以</p>
 <p>$$<br>\int\dfrac{\mathrm{d}x}{\sqrt{4-x^2}\arccos\left(\dfrac{x}{2}\right)}<br>&#x3D;-\int\dfrac{\mathrm{d}u}{u}<br>&#x3D;-\ln\left\lvert\arccos\dfrac x2\right\rvert+C.<br>$$</p>
 <p>原式的区间为 $-2&lt;x&lt;2$，在这个区间内 $\arccos\left(\dfrac{x}{2}\right)&gt;0$。</p>
-<h3 id="4-对数、幂函数和指数的通用配对"><a href="#4-对数、幂函数和指数的通用配对" class="headerlink" title="4. 对数、幂函数和指数的通用配对"></a>4. 对数、幂函数和指数的通用配对</h3><p>将上面的例子归纳为</p>
+<h3 id="对数、幂函数和指数的通用配对"><a href="#对数、幂函数和指数的通用配对" class="headerlink" title="对数、幂函数和指数的通用配对"></a>对数、幂函数和指数的通用配对</h3><p>将上面的例子归纳为</p>
 <p>$$<br>\int\dfrac{g’(x)}{g(x)},\mathrm{d}x&#x3D;\ln\lvert g(x)\rvert+C,<br>$$</p>
 <p>$$<br>\int g’(x)[g(x)]^p,\mathrm{d}x<br>&#x3D;\dfrac{[g(x)]^{p+1}}{p+1}+C\quad(p\ne-1),<br>$$</p>
 <p>$$<br>\int g’(x)\mathrm{e}^{g(x)},\mathrm{d}x&#x3D;\mathrm{e}^{g(x)}+C.<br>$$</p>
 <p>例如 $\displaystyle \int\dfrac{x\mathrm{e}^{-\sqrt{1+x^2}}}{\sqrt{1+x^2}},\mathrm{d}x$ 取 $u&#x3D;\sqrt{1+x^2}$，得到 $\displaystyle \int\mathrm{e}^{-u},\mathrm{d}u&#x3D;-\mathrm{e}^{-u}+C$，回代后为 $-\mathrm{e}^{-\sqrt{1+x^2}}+C$。</p>
-<h2 id="三、先做代数化简，再积分"><a href="#三、先做代数化简，再积分" class="headerlink" title="三、先做代数化简，再积分"></a>三、先做代数化简，再积分</h2><h3 id="1-分子与分母接近时，先拆出常数项"><a href="#1-分子与分母接近时，先拆出常数项" class="headerlink" title="1. 分子与分母接近时，先拆出常数项"></a>1. 分子与分母接近时，先拆出常数项</h3><p><strong>例　计算 $\displaystyle\int\dfrac{x^2}{1+x^2},\mathrm{d}x$。</strong></p>
+<h2 id="先做代数化简，再积分"><a href="#先做代数化简，再积分" class="headerlink" title="先做代数化简，再积分"></a>先做代数化简，再积分</h2><h3 id="分子与分母接近时，先拆出常数项"><a href="#分子与分母接近时，先拆出常数项" class="headerlink" title="分子与分母接近时，先拆出常数项"></a>分子与分母接近时，先拆出常数项</h3><p><strong>例　计算 $\displaystyle\int\dfrac{x^2}{1+x^2},\mathrm{d}x$。</strong></p>
 <p>分子 $x^2&#x3D;(1+x^2)-1$，所以</p>
 <p>$$<br>\dfrac{x^2}{1+x^2}&#x3D;1-\dfrac1{1+x^2}.<br>$$</p>
 <p>于是</p>
 <p>$$<br>\int\dfrac{x^2}{1+x^2},\mathrm{d}x<br>&#x3D;\int1,\mathrm{d}x-\int\dfrac{\mathrm{d}x}{1+x^2}<br>&#x3D;x-\arctan x+C.<br>$$</p>
 <p>这也解释了分式长除的目的，先拆成多项式加一个分子次数更低的分式。</p>
-<h3 id="2-二次式先配方，再认公式"><a href="#2-二次式先配方，再认公式" class="headerlink" title="2. 二次式先配方，再认公式"></a>2. 二次式先配方，再认公式</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\mathrm{d}x}{x^2+2x+3}$。</strong></p>
+<h3 id="二次式先配方，再认公式"><a href="#二次式先配方，再认公式" class="headerlink" title="二次式先配方，再认公式"></a>二次式先配方，再认公式</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\mathrm{d}x}{x^2+2x+3}$。</strong></p>
 <p>分母中有一次项，先把它配成完整平方，</p>
 <p>$$<br>x^2+2x+3&#x3D;(x+1)^2+2.<br>$$</p>
 <p>基本公式的分母是 $1+u^2$，因此令 $u&#x3D;\dfrac{x+1}{\sqrt2}$。此时 $\mathrm{d}x&#x3D;\sqrt2,\mathrm{d}u$，分母为 $2(1+u^2)$，故</p>
@@ -520,7 +520,7 @@
 <p>由缩放可得到两条常用公式，以下 $a&gt;0$，</p>
 <p>$$<br>\int\dfrac{\mathrm{d}x}{a^2+x^2}&#x3D;\dfrac1a\arctan\dfrac xa+C,<br>$$</p>
 <p>$$<br>\int\dfrac{\mathrm{d}x}{\sqrt{a^2-x^2}}&#x3D;\arcsin\dfrac xa+C,<br>\qquad -a&lt;x&lt;a.<br>$$</p>
-<h3 id="3-同一个分子可以拆开，分别换元"><a href="#3-同一个分子可以拆开，分别换元" class="headerlink" title="3. 同一个分子可以拆开，分别换元"></a>3. 同一个分子可以拆开，分别换元</h3><p><strong>例　计算 $\displaystyle\int\dfrac{3x^3+x}{1+x^4},\mathrm{d}x$。</strong></p>
+<h3 id="同一个分子可以拆开，分别换元"><a href="#同一个分子可以拆开，分别换元" class="headerlink" title="同一个分子可以拆开，分别换元"></a>同一个分子可以拆开，分别换元</h3><p><strong>例　计算 $\displaystyle\int\dfrac{3x^3+x}{1+x^4},\mathrm{d}x$。</strong></p>
 <p>观察到 $1+x^4$ 的导数是 $4x^3$，能处理分子中的 $3x^3$。余下的 $x$ 也有用途，因为 $x,\mathrm{d}x$ 可以配成 $\dfrac{\mathrm{d}(x^2)}{2}$，而分母 $1+x^4&#x3D;1+(x^2)^2$。</p>
 <p>先按分子的两项拆开，</p>
 <p>$$<br>\int\dfrac{3x^3+x}{1+x^4},\mathrm{d}x<br>&#x3D;3\int\dfrac{x^3}{1+x^4},\mathrm{d}x<br>+\int\dfrac{x}{1+x^4},\mathrm{d}x.<br>$$</p>
@@ -531,7 +531,7 @@
 <p>把两部分相加，两个常数之和仍记为 $C$，最终得到</p>
 <p>$$<br>\boxed{\dfrac34\ln(1+x^4)+\dfrac12\arctan(x^2)+C}.<br>$$</p>
 <p>可以分别对结果中的对数项和反正切项求导，它们正好还原拆开的两项。</p>
-<h3 id="4-反复出现同一个幂，尝试整体换掉"><a href="#4-反复出现同一个幂，尝试整体换掉" class="headerlink" title="4. 反复出现同一个幂，尝试整体换掉"></a>4. 反复出现同一个幂，尝试整体换掉</h3><p>先看一个具体例子，</p>
+<h3 id="反复出现同一个幂，尝试整体换掉"><a href="#反复出现同一个幂，尝试整体换掉" class="headerlink" title="反复出现同一个幂，尝试整体换掉"></a>反复出现同一个幂，尝试整体换掉</h3><p>先看一个具体例子，</p>
 <p>$$<br>\int\dfrac{t}{t^4+10t^2+9},\mathrm{d}t.<br>$$</p>
 <p>分母 $t^4&#x3D;(t^2)^2$，$10t^2$ 也由 $t^2$ 组成。分子中的 $t,\mathrm{d}t$ 又能配成 $\dfrac{\mathrm{d}(t^2)}{2}$，所以令 $u&#x3D;t^2$，得到</p>
 <p>$$<br>\dfrac12\int\dfrac{\mathrm{d}u}{u^2+10u+9}<br>&#x3D;\dfrac12\int\dfrac{\mathrm{d}u}{(u+1)(u+9)}.<br>$$</p>
@@ -551,14 +551,14 @@
 <p>于是</p>
 <p>$$<br>\begin{aligned}<br>\int\dfrac{1-x^7}{x(1+x^7)},\mathrm{d}x<br>&amp;&#x3D;\dfrac17\int\dfrac{1-u}{u(1+u)},\mathrm{d}u\<br>&amp;&#x3D;\dfrac17\int\left(\dfrac1u-\dfrac2{1+u}\right)\mathrm{d}u\<br>&amp;&#x3D;\ln\lvert x\rvert-\dfrac27\ln\lvert1+x^7\rvert+C.<br>\end{aligned}<br>$$</p>
 <p>这里要求 $x\ne0,-1$。整体换元后，应把所有幂和微分同时改写成新变量。</p>
-<h3 id="5-分母反复出现-x-c-时，先平移"><a href="#5-分母反复出现-x-c-时，先平移" class="headerlink" title="5. 分母反复出现 $x-c$ 时，先平移"></a>5. 分母反复出现 $x-c$ 时，先平移</h3><p>“平移代换”就是把 $x-c$ 换成一个字母，这样 $x$ 就等于新变量加常数。</p>
+<h3 id="分母反复出现-x-c-时，先平移"><a href="#分母反复出现-x-c-时，先平移" class="headerlink" title="分母反复出现 $x-c$ 时，先平移"></a>分母反复出现 $x-c$ 时，先平移</h3><p>“平移代换”就是把 $x-c$ 换成一个字母，这样 $x$ 就等于新变量加常数。</p>
 <p><strong>例　计算 $\displaystyle\int\dfrac{x^2+2}{(x-1)^4},\mathrm{d}x$，$x\ne1$。</strong></p>
 <p>令 $u&#x3D;x-1$，则 $x&#x3D;u+1$、$\mathrm{d}x&#x3D;\mathrm{d}u$。分子要一起替换，</p>
 <p>$$<br>x^2+2&#x3D;(u+1)^2+2&#x3D;u^2+2u+3.<br>$$</p>
 <p>因此</p>
 <p>$$<br>\begin{aligned}<br>\int\dfrac{x^2+2}{(x-1)^4},\mathrm{d}x<br>&amp;&#x3D;\int\left(u^{-2}+2u^{-3}+3u^{-4}\right)\mathrm{d}u\<br>&amp;&#x3D;-u^{-1}-u^{-2}-u^{-3}+C\<br>&amp;&#x3D;-\dfrac1{x-1}-\dfrac1{(x-1)^2}-\dfrac1{(x-1)^3}+C.<br>\end{aligned}<br>$$</p>
 <p>分母即使是 $(x-1)^{100}$，思路也相同。先替换分子，再把分式拆成若干幂函数。</p>
-<h3 id="6-分母可分解时，怎样拆部分分式"><a href="#6-分母可分解时，怎样拆部分分式" class="headerlink" title="6. 分母可分解时，怎样拆部分分式"></a>6. 分母可分解时，怎样拆部分分式</h3><p>“部分分式”是把一个分式写成几个分母更简单的分式之和。先用一个例子看系数怎样确定。</p>
+<h3 id="分母可分解时，怎样拆部分分式"><a href="#分母可分解时，怎样拆部分分式" class="headerlink" title="分母可分解时，怎样拆部分分式"></a>分母可分解时，怎样拆部分分式</h3><p>“部分分式”是把一个分式写成几个分母更简单的分式之和。先用一个例子看系数怎样确定。</p>
 <p>$$<br>\dfrac1{(u+1)(u+9)}&#x3D;\dfrac A{u+1}+\dfrac B{u+9}.<br>$$</p>
 <p>$A,B$ 是待求常数。两边乘分母，得到</p>
 <p>$$<br>1&#x3D;A(u+9)+B(u+1).<br>$$</p>
@@ -583,13 +583,13 @@
 <p>前两项积分为对数。后两项配方成 $\left(x\pm\dfrac{1}{\sqrt2}\right)^2+\dfrac{1}{2}$，积分为反正切。合起来为</p>
 <p>$$<br>\begin{aligned}<br>\int\dfrac{\mathrm{d}x}{x^4+1}<br>&#x3D;{}&amp;\dfrac1{4\sqrt2}\ln\dfrac{x^2+\sqrt2x+1}{x^2-\sqrt2x+1}\<br>&amp;+\dfrac1{2\sqrt2}\bigl[\arctan(\sqrt2x+1)+\arctan(\sqrt2x-1)\bigr]+C.<br>\end{aligned}<br>$$</p>
 <p>遇到 $\dfrac{x^7+1}{x^4+1}$ 时，先长除成 $x^3-\dfrac{x^3}{x^4+1}+\dfrac{1}{x^4+1}$。第一项幂积分，第二项凑 $\mathrm{d}(x^4+1)$，第三项使用刚才的拆分方法。</p>
-<h3 id="7-多个指数项，可以换成同一个幂"><a href="#7-多个指数项，可以换成同一个幂" class="headerlink" title="7. 多个指数项，可以换成同一个幂"></a>7. 多个指数项，可以换成同一个幂</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\mathrm{d}x}{\mathrm{e}^x+\mathrm{e}^{\frac{x}{2}}}$。</strong></p>
+<h3 id="多个指数项，可以换成同一个幂"><a href="#多个指数项，可以换成同一个幂" class="headerlink" title="多个指数项，可以换成同一个幂"></a>多个指数项，可以换成同一个幂</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\mathrm{d}x}{\mathrm{e}^x+\mathrm{e}^{\frac{x}{2}}}$。</strong></p>
 <p>因为 $\mathrm{e}^x&#x3D;(\mathrm{e}^{\frac{x}{2}})^2$，两个指数项可以一起换成同一个变量的幂。选 $u&#x3D;\mathrm{e}^{-\frac{x}{2}}$，则</p>
 <p>$$<br>\mathrm{e}^{\frac{x}{2}}&#x3D;\dfrac1u,<br>\quad \mathrm{e}^x&#x3D;\dfrac1{u^2},<br>\quad \mathrm{d}x&#x3D;-\dfrac2u,\mathrm{d}u.<br>$$</p>
 <p>全部替换后得到</p>
 <p>$$<br>\int\dfrac{\mathrm{d}x}{\mathrm{e}^x+\mathrm{e}^{\frac{x}{2}}}<br>&#x3D;-2\int\dfrac{u}{1+u},\mathrm{d}u<br>&#x3D;-2u+2\ln(1+u)+C.<br>$$</p>
 <p>回代后为 $-2\mathrm{e}^{-\frac{x}{2}}+2\ln(1+\mathrm{e}^{-\frac{x}{2}})+C$。这里先选择新变量，再用 $\dfrac{u}{1+u}&#x3D;1-\dfrac{1}{1+u}$ 做代数拆分。</p>
-<h2 id="四、三角函数积分怎样选变形"><a href="#四、三角函数积分怎样选变形" class="headerlink" title="四、三角函数积分怎样选变形"></a>四、三角函数积分怎样选变形</h2><h3 id="1-正弦、余弦的奇数次幂，留一个因子配微分"><a href="#1-正弦、余弦的奇数次幂，留一个因子配微分" class="headerlink" title="1. 正弦、余弦的奇数次幂，留一个因子配微分"></a>1. 正弦、余弦的奇数次幂，留一个因子配微分</h3><p>“奇数次幂”指 $\sin^3x$、$\cos^5x$ 中的 $3,5$。之所以留出一个因子，是因为</p>
+<h2 id="三角函数积分怎样选变形"><a href="#三角函数积分怎样选变形" class="headerlink" title="三角函数积分怎样选变形"></a>三角函数积分怎样选变形</h2><h3 id="正弦、余弦的奇数次幂，留一个因子配微分"><a href="#正弦、余弦的奇数次幂，留一个因子配微分" class="headerlink" title="正弦、余弦的奇数次幂，留一个因子配微分"></a>正弦、余弦的奇数次幂，留一个因子配微分</h3><p>“奇数次幂”指 $\sin^3x$、$\cos^5x$ 中的 $3,5$。之所以留出一个因子，是因为</p>
 <p>$$<br>\mathrm{d}(\cos x)&#x3D;-\sin x,\mathrm{d}x,<br>\qquad \mathrm{d}(\sin x)&#x3D;\cos x,\mathrm{d}x.<br>$$</p>
 <p><strong>例　计算 $\displaystyle\int\sin^3x,\mathrm{d}x$。</strong></p>
 <p>把三个正弦拆成“一对加一个”，用 $\sin^2x&#x3D;1-\cos^2x$ 处理那一对，</p>
@@ -603,7 +603,7 @@
 <p>这次余弦为奇数次幂，留一个 $\cos x$，取 $u&#x3D;\sin x$，</p>
 <p>$$<br>\begin{aligned}<br>\int\dfrac{\cos^3x}{\sin^2x},\mathrm{d}x<br>&amp;&#x3D;\int\dfrac{1-\sin^2x}{\sin^2x}\cos x,\mathrm{d}x\<br>&amp;&#x3D;\int(u^{-2}-1),\mathrm{d}u\<br>&amp;&#x3D;-\dfrac1u-u+C<br>&#x3D;-\dfrac1{\sin x}-\sin x+C.<br>\end{aligned}<br>$$</p>
 <p>操作时看哪一种三角函数能留出一个配微分，再把其余因子全部写成新变量。这里正弦和余弦的奇偶幂指非负整数次幂，分母出现的平方则按代数规则随换元一起处理。</p>
-<h3 id="2-两种幂都是偶数时，先降幂"><a href="#2-两种幂都是偶数时，先降幂" class="headerlink" title="2. 两种幂都是偶数时，先降幂"></a>2. 两种幂都是偶数时，先降幂</h3><p>平方恒等式给出</p>
+<h3 id="两种幂都是偶数时，先降幂"><a href="#两种幂都是偶数时，先降幂" class="headerlink" title="两种幂都是偶数时，先降幂"></a>两种幂都是偶数时，先降幂</h3><p>平方恒等式给出</p>
 <p>$$<br>\sin^2x&#x3D;\dfrac{1-\cos2x}{2},\qquad<br>\cos^2x&#x3D;\dfrac{1+\cos2x}{2}.<br>$$</p>
 <p><strong>例　计算 $\displaystyle\int\cos^2x,\mathrm{d}x$。</strong></p>
 <p>$$<br>\int\cos^2x,\mathrm{d}x<br>&#x3D;\dfrac12\int1,\mathrm{d}x+\dfrac12\int\cos2x,\mathrm{d}x<br>&#x3D;\dfrac x2+\dfrac14\sin2x+C.<br>$$</p>
@@ -616,7 +616,7 @@
 <p>四次幂可连续降幂。例如</p>
 <p>$$<br>\cos^4x&#x3D;\left(\dfrac{1+\cos2x}{2}\right)^2<br>&#x3D;\dfrac38+\dfrac12\cos2x+\dfrac18\cos4x,<br>$$</p>
 <p>故 $\displaystyle \int\cos^4x,\mathrm{d}x&#x3D;\dfrac{3x}{8}+\dfrac{\sin2x}{4}+\dfrac{\sin4x}{32}+C$。</p>
-<h3 id="3-正切、正割与余切、余割，寻找导数配对"><a href="#3-正切、正割与余切、余割，寻找导数配对" class="headerlink" title="3. 正切、正割与余切、余割，寻找导数配对"></a>3. 正切、正割与余切、余割，寻找导数配对</h3><p>需要用到</p>
+<h3 id="正切、正割与余切、余割，寻找导数配对"><a href="#正切、正割与余切、余割，寻找导数配对" class="headerlink" title="正切、正割与余切、余割，寻找导数配对"></a>正切、正割与余切、余割，寻找导数配对</h3><p>需要用到</p>
 <p>$$<br>1+\tan^2x&#x3D;\sec^2x,\qquad<br>1+\cot^2x&#x3D;\csc^2x,<br>$$</p>
 <p>$$<br>\mathrm{d}(\tan x)&#x3D;\sec^2x,\mathrm{d}x,<br>\quad \mathrm{d}(\sec x)&#x3D;\sec x\tan x,\mathrm{d}x,<br>\quad \mathrm{d}(\csc x)&#x3D;-\csc x\cot x,\mathrm{d}x.<br>$$</p>
 <p><strong>例　计算 $\displaystyle\int\sec^4x,\mathrm{d}x$。</strong></p>
@@ -626,7 +626,7 @@
 <p>留出 $\sec x\tan x$，令 $u&#x3D;\sec x$，其余 $\tan^2x&#x3D;u^2-1$，得到</p>
 <p>$$<br>\int(u^2-1),\mathrm{d}u&#x3D;\dfrac13\sec^3x-\sec x+C.<br>$$</p>
 <p>同理，$\displaystyle \int\csc^3x\cot x,\mathrm{d}x$ 留出 $\csc x\cot x$，令 $u&#x3D;\csc x$，得到 $\displaystyle -\int u^2,\mathrm{d}u&#x3D;-\dfrac{\csc^3x}{3}+C$。负号来自余割的导数。</p>
-<h3 id="4-不同角的乘积，先积化和差"><a href="#4-不同角的乘积，先积化和差" class="headerlink" title="4. 不同角的乘积，先积化和差"></a>4. 不同角的乘积，先积化和差</h3><p><strong>例　计算 $\displaystyle\int\sin x\cos2x,\mathrm{d}x$。</strong></p>
+<h3 id="不同角的乘积，先积化和差"><a href="#不同角的乘积，先积化和差" class="headerlink" title="不同角的乘积，先积化和差"></a>不同角的乘积，先积化和差</h3><p><strong>例　计算 $\displaystyle\int\sin x\cos2x,\mathrm{d}x$。</strong></p>
 <p>利用积化和差，</p>
 <p>$$<br>\sin x\cos2x&#x3D;\dfrac12(\sin3x-\sin x).<br>$$</p>
 <p>因此</p>
@@ -638,7 +638,7 @@
 <p>它们也用于证明正交性。“正交”在这里指两种函数乘积的积分为零。例如 $m,n$ 是不同的正整数时，$m-n$ 与 $m+n$ 都是非零整数，故</p>
 <p>$$<br>\int_{-\pi}^{\pi}\sin mx\sin nx,\mathrm{d}x&#x3D;0,<br>$$</p>
 <p>因为积化和差后的每个余弦都有原函数 $\dfrac{\sin(kx)}{k}$，而 $\sin(k\pi)&#x3D;\sin(-k\pi)&#x3D;0$。若 $m&#x3D;n$，其中一项变成常数 $1$，积分结果为 $\pi$。余弦乘余弦同样处理，正弦乘余弦还可以直接利用奇函数性质。</p>
-<h3 id="5-半角代换，把三角分式变成普通分式"><a href="#5-半角代换，把三角分式变成普通分式" class="headerlink" title="5. 半角代换，把三角分式变成普通分式"></a>5. 半角代换，把三角分式变成普通分式</h3><p>若正弦、余弦出现在分式中，而分子与分母的导数没有直接配对，可以考虑</p>
+<h3 id="半角代换，把三角分式变成普通分式"><a href="#半角代换，把三角分式变成普通分式" class="headerlink" title="半角代换，把三角分式变成普通分式"></a>半角代换，把三角分式变成普通分式</h3><p>若正弦、余弦出现在分式中，而分子与分母的导数没有直接配对，可以考虑</p>
 <p>$$<br>t&#x3D;\tan\dfrac x2,<br>\quad \sin x&#x3D;\dfrac{2t}{1+t^2},<br>\quad \cos x&#x3D;\dfrac{1-t^2}{1+t^2},<br>\quad \mathrm{d}x&#x3D;\dfrac{2,\mathrm{d}t}{1+t^2}.<br>$$</p>
 <p>“半角”指把 $\dfrac{x}{2}$ 的正切作为新变量。微分式可由 $x&#x3D;2\arctan t$ 求导得到。</p>
 <p><strong>例　计算 $\displaystyle\int\dfrac{\mathrm{d}x}{3+2\cos x}$。</strong></p>
@@ -650,7 +650,7 @@
 <p>另一个常用选择是直接取 $t&#x3D;\tan x$。例如</p>
 <p>$$<br>\int\dfrac{\mathrm{d}x}{1+\sin^2x}<br>&#x3D;\int\dfrac{\mathrm{d}t}{1+2t^2}<br>&#x3D;\dfrac1{\sqrt2}\arctan(\sqrt2\tan x)+C,<br>$$</p>
 <p>其中使用了 $\sin^2x&#x3D;\dfrac{t^2}{1+t^2}$、$\mathrm{d}x&#x3D;\dfrac{\mathrm{d}t}{1+t^2}$。这些换元在所选正切函数有定义的区间内使用，定积分跨越换元的间断点时需要分段。</p>
-<h3 id="6-正割与余割，怎样凑出对数"><a href="#6-正割与余割，怎样凑出对数" class="headerlink" title="6. 正割与余割，怎样凑出对数"></a>6. 正割与余割，怎样凑出对数</h3><p><strong>例　计算 $\displaystyle\int\csc x,\mathrm{d}x$。</strong></p>
+<h3 id="正割与余割，怎样凑出对数"><a href="#正割与余割，怎样凑出对数" class="headerlink" title="正割与余割，怎样凑出对数"></a>正割与余割，怎样凑出对数</h3><p><strong>例　计算 $\displaystyle\int\csc x,\mathrm{d}x$。</strong></p>
 <p>观察到</p>
 <p>$$<br>(\csc x+\cot x)’&#x3D;-\csc x\cot x-\csc^2x<br>&#x3D;-\csc x(\csc x+\cot x).<br>$$</p>
 <p>分子分母同乘 $\csc x+\cot x$，就能得到“一个函数的导数除以自身”，</p>
@@ -659,7 +659,7 @@
 <p>另一种起步是 $\dfrac{1}{\sin x}&#x3D;\dfrac{\sin x}{1-\cos^2x}$，令 $u&#x3D;\cos x$ 后得到 $\displaystyle -\int\dfrac{\mathrm{d}u}{1-u^2}$，用部分分式也能完成。</p>
 <p>正割同样利用 $(\sec x+\tan x)’&#x3D;\sec x(\sec x+\tan x)$，得到</p>
 <p>$$<br>\int\sec x,\mathrm{d}x&#x3D;\ln\lvert\sec x+\tan x\rvert+C.<br>$$</p>
-<h2 id="五、根式积分，怎样把根号消掉"><a href="#五、根式积分，怎样把根号消掉" class="headerlink" title="五、根式积分，怎样把根号消掉"></a>五、根式积分，怎样把根号消掉</h2><h3 id="1-根号里是一次式，直接把根式设为变量"><a href="#1-根号里是一次式，直接把根式设为变量" class="headerlink" title="1. 根号里是一次式，直接把根式设为变量"></a>1. 根号里是一次式，直接把根式设为变量</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\mathrm{d}x}{1+\sqrt[3]{x+2}}$。</strong></p>
+<h2 id="根式积分，怎样把根号消掉"><a href="#根式积分，怎样把根号消掉" class="headerlink" title="根式积分，怎样把根号消掉"></a>根式积分，怎样把根号消掉</h2><h3 id="根号里是一次式，直接把根式设为变量"><a href="#根号里是一次式，直接把根式设为变量" class="headerlink" title="根号里是一次式，直接把根式设为变量"></a>根号里是一次式，直接把根式设为变量</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\mathrm{d}x}{1+\sqrt[3]{x+2}}$。</strong></p>
 <p>令 $t&#x3D;\sqrt[3]{x+2}$，则 $x&#x3D;t^3-2$、$\mathrm{d}x&#x3D;3t^2,\mathrm{d}t$。这样根号被整个换掉，得到</p>
 <p>$$<br>\int\dfrac{3t^2}{1+t},\mathrm{d}t.<br>$$</p>
 <p>先拆分 $t^2&#x3D;(t+1)(t-1)+1$，所以</p>
@@ -673,7 +673,7 @@
 <p>以上求原函数在 $x&gt;-1$ 的开区间内进行。</p>
 <p>嵌套根式也先从内层看起。例如 $\displaystyle \int\dfrac{\sqrt{1+\sqrt x}}{\sqrt x},\mathrm{d}x$，令 $u&#x3D;1+\sqrt x$，则 $\dfrac{\mathrm{d}x}{\sqrt x}&#x3D;2,\mathrm{d}u$，积分为</p>
 <p>$$<br>2\int u^{\frac{1}{2}},\mathrm{d}u&#x3D;\dfrac43(1+\sqrt x)^{\frac{3}{2}}+C,\qquad x&gt;0.<br>$$</p>
-<h3 id="2-根号里有对数或指数，也要把它们一起替换"><a href="#2-根号里有对数或指数，也要把它们一起替换" class="headerlink" title="2. 根号里有对数或指数，也要把它们一起替换"></a>2. 根号里有对数或指数，也要把它们一起替换</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\sqrt{1+\ln x}}{x\ln x},\mathrm{d}x$。</strong></p>
+<h3 id="根号里有对数或指数，也要把它们一起替换"><a href="#根号里有对数或指数，也要把它们一起替换" class="headerlink" title="根号里有对数或指数，也要把它们一起替换"></a>根号里有对数或指数，也要把它们一起替换</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\sqrt{1+\ln x}}{x\ln x},\mathrm{d}x$。</strong></p>
 <p>令 $t&#x3D;\sqrt{1+\ln x}$。平方后得到 $\ln x&#x3D;t^2-1$，求微分得到 $\dfrac{\mathrm{d}x}{x}&#x3D;2t,\mathrm{d}t$，因此</p>
 <p>$$<br>\int\dfrac{\sqrt{1+\ln x}}{x\ln x},\mathrm{d}x<br>&#x3D;2\int\dfrac{t^2}{t^2-1},\mathrm{d}t<br>&#x3D;2\int\left(1+\dfrac1{t^2-1}\right)\mathrm{d}t.<br>$$</p>
 <p>再用 $\dfrac{1}{t^2-1}&#x3D;\dfrac{1}{2}\left[\dfrac{1}{t-1}-\dfrac{1}{t+1}\right]$，结果为</p>
@@ -690,7 +690,7 @@
 <p>$$<br>\mathrm{d}x&#x3D;\dfrac{t}{t^2-5},\mathrm{d}t,<br>\qquad<br>\int\sqrt{\mathrm{e}^{2x}+5},\mathrm{d}x<br>&#x3D;\int\dfrac{t^2}{t^2-5},\mathrm{d}t.<br>$$</p>
 <p>写成 $1+\dfrac{5}{t^2-5}$ 后用部分分式，得到</p>
 <p>$$<br>\sqrt{\mathrm{e}^{2x}+5}<br>+\dfrac{\sqrt5}{2}\ln\left\lvert<br>\dfrac{\sqrt{\mathrm{e}^{2x}+5}-\sqrt5}{\sqrt{\mathrm{e}^{2x}+5}+\sqrt5}<br>\right\rvert+C.<br>$$</p>
-<h3 id="3-二次根式，为什么想到三角代换"><a href="#3-二次根式，为什么想到三角代换" class="headerlink" title="3. 二次根式，为什么想到三角代换"></a>3. 二次根式，为什么想到三角代换</h3><p>有些二次根式可以直接凑微分。例如</p>
+<h3 id="二次根式，为什么想到三角代换"><a href="#二次根式，为什么想到三角代换" class="headerlink" title="二次根式，为什么想到三角代换"></a>二次根式，为什么想到三角代换</h3><p>有些二次根式可以直接凑微分。例如</p>
 <p>$$<br>\int\dfrac{x^3}{(1+x^2)^{\frac{3}{2}}},\mathrm{d}x.<br>$$</p>
 <p>取 $t&#x3D;\sqrt{1+x^2}$，则 $x,\mathrm{d}x&#x3D;t,\mathrm{d}t$、$x^2&#x3D;t^2-1$。把 $x^3,\mathrm{d}x$ 写成 $x^2(x,\mathrm{d}x)$ 后，原积分变成</p>
 <p>$$<br>\int\dfrac{(t^2-1)t}{t^3},\mathrm{d}t<br>&#x3D;\int(1-t^{-2}),\mathrm{d}t<br>&#x3D;\sqrt{1+x^2}+\dfrac1{\sqrt{1+x^2}}+C.<br>$$</p>
@@ -744,10 +744,10 @@
 <p>$$<br>\boxed{\int\dfrac{\mathrm{d}x}{\sqrt{x^2-a^2}}<br>&#x3D;\ln\left\lvert x+\sqrt{x^2-a^2}\right\rvert+C}.<br>$$</p>
 <p>可以直接检查这个统一结果。记 $r&#x3D;\sqrt{x^2-a^2}$，则</p>
 <p>$$<br>\left(\ln\lvert x+r\rvert\right)’<br>&#x3D;\dfrac{1+\dfrac{x}{r}}{x+r}&#x3D;\dfrac1r.<br>$$</p>
-<h3 id="4-二次式有一次项时，先平移"><a href="#4-二次式有一次项时，先平移" class="headerlink" title="4. 二次式有一次项时，先平移"></a>4. 二次式有一次项时，先平移</h3><p>例如 $x^2-2x+4&#x3D;(x-1)^2+3$。求 $\displaystyle \int\dfrac{\mathrm{d}x}{(x^2-2x+4)^{\frac{3}{2}}}$，令 $y&#x3D;x-1$ 后就是上一类的平方和，再取 $y&#x3D;\sqrt3\tan t$。也可直接使用已经推导的结果，</p>
+<h3 id="二次式有一次项时，先平移"><a href="#二次式有一次项时，先平移" class="headerlink" title="二次式有一次项时，先平移"></a>二次式有一次项时，先平移</h3><p>例如 $x^2-2x+4&#x3D;(x-1)^2+3$。求 $\displaystyle \int\dfrac{\mathrm{d}x}{(x^2-2x+4)^{\frac{3}{2}}}$，令 $y&#x3D;x-1$ 后就是上一类的平方和，再取 $y&#x3D;\sqrt3\tan t$。也可直接使用已经推导的结果，</p>
 <p>$$<br>\int\dfrac{\mathrm{d}x}{(x^2-2x+4)^{\frac{3}{2}}}<br>&#x3D;\dfrac{x-1}{3\sqrt{(x-1)^2+3}}+C.<br>$$</p>
 <p>平移是在整理根式内部，根式内部整理好以后，再按它的结构选择换元。</p>
-<h3 id="5-根式是两个一次式的商时"><a href="#5-根式是两个一次式的商时" class="headerlink" title="5. 根式是两个一次式的商时"></a>5. 根式是两个一次式的商时</h3><p><strong>例　计算 $\displaystyle\int x\sqrt{\dfrac{1-x}{1+x}},\mathrm{d}x$，$-1&lt;x&lt;1$。</strong></p>
+<h3 id="根式是两个一次式的商时"><a href="#根式是两个一次式的商时" class="headerlink" title="根式是两个一次式的商时"></a>根式是两个一次式的商时</h3><p><strong>例　计算 $\displaystyle\int x\sqrt{\dfrac{1-x}{1+x}},\mathrm{d}x$，$-1&lt;x&lt;1$。</strong></p>
 <p>令 $x&#x3D;\cos t$，$0&lt;t&lt;\pi$。由半角公式可得根式为 $\tan\left(\dfrac{t}{2}\right)$，并且</p>
 <p>$$<br>\tan\dfrac t2\sin t&#x3D;1-\cos t.<br>$$</p>
 <p>连同 $\mathrm{d}x&#x3D;-\sin t,\mathrm{d}t$ 一起代入，原式变成</p>
@@ -755,7 +755,7 @@
 <p>用 $t&#x3D;\arccos x$、$\sin t&#x3D;\sqrt{1-x^2}$、$\sin2t&#x3D;2x\sqrt{1-x^2}$ 回代，结果为</p>
 <p>$$<br>\dfrac12\arccos x+\left(\dfrac x2-1\right)\sqrt{1-x^2}+C.<br>$$</p>
 <p>也可以把根式直接设为 $u&#x3D;\sqrt{\dfrac{1-x}{1+x}}$，平方后解出 $x&#x3D;\dfrac{1-u^2}{1+u^2}$，再求 $\mathrm{d}x$，原式会成为普通分式。</p>
-<h3 id="6-根式外有-x-的分母时，可以尝试取根式与-x-的商"><a href="#6-根式外有-x-的分母时，可以尝试取根式与-x-的商" class="headerlink" title="6. 根式外有 $x$ 的分母时，可以尝试取根式与 $x$ 的商"></a>6. 根式外有 $x$ 的分母时，可以尝试取根式与 $x$ 的商</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\sqrt{x^2+2x}}{x^2},\mathrm{d}x$，在 $x&gt;0$ 或 $x&lt;-2$ 上计算。</strong></p>
+<h3 id="根式外有-x-的分母时，可以尝试取根式与-x-的商"><a href="#根式外有-x-的分母时，可以尝试取根式与-x-的商" class="headerlink" title="根式外有 $x$ 的分母时，可以尝试取根式与 $x$ 的商"></a>根式外有 $x$ 的分母时，可以尝试取根式与 $x$ 的商</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\sqrt{x^2+2x}}{x^2},\mathrm{d}x$，在 $x&gt;0$ 或 $x&lt;-2$ 上计算。</strong></p>
 <p>将根式与一个 $x$ 合成新变量，</p>
 <p>$$<br>t&#x3D;\dfrac{\sqrt{x^2+2x}}x,<br>\quad t^2&#x3D;1+\dfrac2x,<br>\quad x&#x3D;\dfrac2{t^2-1},<br>\quad \mathrm{d}x&#x3D;-\dfrac{4t}{(t^2-1)^2},\mathrm{d}t.<br>$$</p>
 <p>因为 $\sqrt{x^2+2x}&#x3D;tx$，原积分变成</p>
@@ -769,16 +769,16 @@
 <p>$$<br>\mathrm{d}t&#x3D;\dfrac{x+1}{t},\mathrm{d}x,<br>\quad (x+1)^2&#x3D;t^2-2,<br>\quad \int\dfrac{\mathrm{d}x}{(x+1)t}&#x3D;\int\dfrac{\mathrm{d}t}{t^2-2}.<br>$$</p>
 <p>右边部分分式积分为 $\dfrac{1}{2\sqrt2}\ln\left\lvert\dfrac{t-\sqrt2}{t+\sqrt2}\right\rvert+C$，再回代得到</p>
 <p>$$<br>\dfrac1{2\sqrt2}\ln\left\lvert<br>\dfrac{\sqrt{x^2+2x+3}-\sqrt2}{\sqrt{x^2+2x+3}+\sqrt2}<br>\right\rvert+C,\qquad x\ne-1.<br>$$</p>
-<h3 id="7-双曲函数代换的补充"><a href="#7-双曲函数代换的补充" class="headerlink" title="7. 双曲函数代换的补充"></a>7. 双曲函数代换的补充</h3><p>$\sinh t&#x3D;\dfrac{\mathrm{e}^t-\mathrm{e}^{-t}}{2}$、$\cosh t&#x3D;\dfrac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}$，也记作 $\operatorname{sh}t$、$\operatorname{ch}t$。它们满足 $\cosh^2t-\sinh^2t&#x3D;1$。</p>
+<h3 id="双曲函数代换的补充"><a href="#双曲函数代换的补充" class="headerlink" title="双曲函数代换的补充"></a>双曲函数代换的补充</h3><p>$\sinh t&#x3D;\dfrac{\mathrm{e}^t-\mathrm{e}^{-t}}{2}$、$\cosh t&#x3D;\dfrac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}$，也记作 $\operatorname{sh}t$、$\operatorname{ch}t$。它们满足 $\cosh^2t-\sinh^2t&#x3D;1$。</p>
 <p>因此 $\sqrt{x^2+a^2}$ 也可以取 $x&#x3D;a\sinh t$，根式化为 $a\cosh t$。对 $x&gt;a$，$\sqrt{x^2-a^2}$ 可以取 $x&#x3D;a\cosh t$、$t&gt;0$，根式化为 $a\sinh t$。这是利用另一组恒等式消去根号，计算时仍需同时替换 $\mathrm{d}x$。</p>
-<h2 id="六、分部积分，怎样选两部分"><a href="#六、分部积分，怎样选两部分" class="headerlink" title="六、分部积分，怎样选两部分"></a>六、分部积分，怎样选两部分</h2><h3 id="1-先通过一个例子理解-u-与-mathrm-d-v"><a href="#1-先通过一个例子理解-u-与-mathrm-d-v" class="headerlink" title="1. 先通过一个例子理解 $u$ 与 $\mathrm{d}v$"></a>1. 先通过一个例子理解 $u$ 与 $\mathrm{d}v$</h3><p>乘积求导给出 $(uv)’&#x3D;u’v+uv’$。移项并积分，就得到</p>
+<h2 id="分部积分，怎样选两部分"><a href="#分部积分，怎样选两部分" class="headerlink" title="分部积分，怎样选两部分"></a>分部积分，怎样选两部分</h2><h3 id="先通过一个例子理解-u-与-mathrm-d-v"><a href="#先通过一个例子理解-u-与-mathrm-d-v" class="headerlink" title="先通过一个例子理解 $u$ 与 $\mathrm{d}v$"></a>先通过一个例子理解 $u$ 与 $\mathrm{d}v$</h3><p>乘积求导给出 $(uv)’&#x3D;u’v+uv’$。移项并积分，就得到</p>
 <p>$$<br>\int u,\mathrm{d}v&#x3D;uv-\int v,\mathrm{d}u.<br>$$</p>
 <p>这里 $u,v$ 都是原变量的函数，$\mathrm{d}u&#x3D;u’(x),\mathrm{d}x$、$\mathrm{d}v&#x3D;v’(x),\mathrm{d}x$。实际计算要选好两部分，求 $u$ 的导数，同时求出 $\mathrm{d}v$ 的原函数 $v$。</p>
 <p><strong>例　计算 $\displaystyle\int x\mathrm{e}^x,\mathrm{d}x$。</strong></p>
 <p>选 $u&#x3D;x$，因为它求导后会变成 $1$。选 $\mathrm{d}v&#x3D;\mathrm{e}^x,\mathrm{d}x$，因为容易求出 $v&#x3D;\mathrm{e}^x$。于是</p>
 <p>$$<br>\mathrm{d}u&#x3D;\mathrm{d}x,<br>\qquad<br>\int x\mathrm{e}^x,\mathrm{d}x<br>&#x3D;x\mathrm{e}^x-\int\mathrm{e}^x,\mathrm{d}x<br>&#x3D;x\mathrm{e}^x-\mathrm{e}^x+C.<br>$$</p>
 <p>选择的依据是，右边剩下的积分更容易了。若把 $u$ 选成 $\mathrm{e}^x$、$\mathrm{d}v$ 选成 $x,\mathrm{d}x$，会得到 $\displaystyle \int x^2\mathrm{e}^x,\mathrm{d}x$，多项式次数增加，下一步的计算反而更长。</p>
-<h3 id="2-多项式乘指数或三角函数，让多项式逐次降幂"><a href="#2-多项式乘指数或三角函数，让多项式逐次降幂" class="headerlink" title="2. 多项式乘指数或三角函数，让多项式逐次降幂"></a>2. 多项式乘指数或三角函数，让多项式逐次降幂</h3><p><strong>例　计算 $\displaystyle\int x^2\mathrm{e}^x,\mathrm{d}x$。</strong></p>
+<h3 id="多项式乘指数或三角函数，让多项式逐次降幂"><a href="#多项式乘指数或三角函数，让多项式逐次降幂" class="headerlink" title="多项式乘指数或三角函数，让多项式逐次降幂"></a>多项式乘指数或三角函数，让多项式逐次降幂</h3><p><strong>例　计算 $\displaystyle\int x^2\mathrm{e}^x,\mathrm{d}x$。</strong></p>
 <p>第一次选 $u&#x3D;x^2$、$v&#x3D;\mathrm{e}^x$，得到</p>
 <p>$$<br>\int x^2\mathrm{e}^x,\mathrm{d}x<br>&#x3D;x^2\mathrm{e}^x-2\int x\mathrm{e}^x,\mathrm{d}x.<br>$$</p>
 <p>上一个例子已算出右边的积分，代入后为</p>
@@ -789,7 +789,7 @@
 <p>双曲函数也能同样处理，因为 $(\sinh x)’&#x3D;\cosh x$、$(\cosh x)’&#x3D;\sinh x$。例如连续分部三次，</p>
 <p>$$<br>\begin{aligned}<br>\int x^3\cosh x,\mathrm{d}x<br>&amp;&#x3D;x^3\sinh x-3\int x^2\sinh x,\mathrm{d}x,\<br>\int x^2\sinh x,\mathrm{d}x<br>&amp;&#x3D;x^2\cosh x-2\int x\cosh x,\mathrm{d}x,\<br>\int x\cosh x,\mathrm{d}x&amp;&#x3D;x\sinh x-\cosh x+C.<br>\end{aligned}<br>$$</p>
 <p>逐层代回，得到 $x^3\sinh x-3x^2\cosh x+6x\sinh x-6\cosh x+C$。</p>
-<h3 id="3-对数或反三角函数，常常放在求导的一边"><a href="#3-对数或反三角函数，常常放在求导的一边" class="headerlink" title="3. 对数或反三角函数，常常放在求导的一边"></a>3. 对数或反三角函数，常常放在求导的一边</h3><p><strong>例　计算 $\displaystyle\int x^2\ln x,\mathrm{d}x$，$x&gt;0$。</strong></p>
+<h3 id="对数或反三角函数，常常放在求导的一边"><a href="#对数或反三角函数，常常放在求导的一边" class="headerlink" title="对数或反三角函数，常常放在求导的一边"></a>对数或反三角函数，常常放在求导的一边</h3><p><strong>例　计算 $\displaystyle\int x^2\ln x,\mathrm{d}x$，$x&gt;0$。</strong></p>
 <p>选 $u&#x3D;\ln x$ 是因为 $\mathrm{d}u&#x3D;\dfrac{\mathrm{d}x}{x}$ 可以与幂函数约简。取 $\mathrm{d}v&#x3D;x^2,\mathrm{d}x$，所以 $v&#x3D;\dfrac{x^3}{3}$。于是</p>
 <p>$$<br>\begin{aligned}<br>\int x^2\ln x,\mathrm{d}x<br>&amp;&#x3D;\dfrac{x^3}{3}\ln x-\int\dfrac{x^3}{3}\dfrac{\mathrm{d}x}{x}\<br>&amp;&#x3D;\dfrac{x^3}{3}\ln x-\dfrac13\int x^2,\mathrm{d}x\<br>&amp;&#x3D;\dfrac{x^3}{3}\ln x-\dfrac{x^3}{9}+C.<br>\end{aligned}<br>$$</p>
 <p><strong>例　计算 $\displaystyle\int x^2\arctan x,\mathrm{d}x$。</strong></p>
@@ -800,7 +800,7 @@
 <p>如果只有 $\ln x$ 或 $\arcsin x$，可以把它看作乘以 $1$，取 $\mathrm{d}v&#x3D;\mathrm{d}x$。例如</p>
 <p>$$<br>\begin{aligned}<br>\int\arcsin x,\mathrm{d}x<br>&amp;&#x3D;x\arcsin x-\int\dfrac{x}{\sqrt{1-x^2}},\mathrm{d}x\<br>&amp;&#x3D;x\arcsin x+\sqrt{1-x^2}+C,\qquad -1&lt;x&lt;1.<br>\end{aligned}<br>$$</p>
 <p>最后一步令 $w&#x3D;1-x^2$，由 $\mathrm{d}w&#x3D;-2x,\mathrm{d}x$ 算出余下的根式积分。</p>
-<h3 id="4-连续分部两次，原积分出现后移项"><a href="#4-连续分部两次，原积分出现后移项" class="headerlink" title="4. 连续分部两次，原积分出现后移项"></a>4. 连续分部两次，原积分出现后移项</h3><p><strong>例　计算 $\displaystyle\int\mathrm{e}^x\sin x,\mathrm{d}x$。</strong></p>
+<h3 id="连续分部两次，原积分出现后移项"><a href="#连续分部两次，原积分出现后移项" class="headerlink" title="连续分部两次，原积分出现后移项"></a>连续分部两次，原积分出现后移项</h3><p><strong>例　计算 $\displaystyle\int\mathrm{e}^x\sin x,\mathrm{d}x$。</strong></p>
 <p>为便于列式，记某个原函数为 $I$。第一次取 $u&#x3D;\sin x$、$\mathrm{d}v&#x3D;\mathrm{e}^x,\mathrm{d}x$，</p>
 <p>$$<br>I&#x3D;\mathrm{e}^x\sin x-\int\mathrm{e}^x\cos x,\mathrm{d}x.<br>$$</p>
 <p>再对余下积分取 $u&#x3D;\cos x$、$\mathrm{d}v&#x3D;\mathrm{e}^x,\mathrm{d}x$，</p>
@@ -810,7 +810,7 @@
 <p>最终补上任意常数，</p>
 <p>$$<br>\int\mathrm{e}^x\sin x,\mathrm{d}x<br>&#x3D;\dfrac12\mathrm{e}^x(\sin x-\cos x)+C.<br>$$</p>
 <p>出现原积分后，观察它的系数能否移项解出。本例从 $I$ 得到 $-I$，因而能解出 $2I$。</p>
-<h3 id="5-换元后再分部，按顺序完成两次简化"><a href="#5-换元后再分部，按顺序完成两次简化" class="headerlink" title="5. 换元后再分部，按顺序完成两次简化"></a>5. 换元后再分部，按顺序完成两次简化</h3><p><strong>例　计算 $\displaystyle\int\sqrt x\sin\sqrt x,\mathrm{d}x$。</strong></p>
+<h3 id="换元后再分部，按顺序完成两次简化"><a href="#换元后再分部，按顺序完成两次简化" class="headerlink" title="换元后再分部，按顺序完成两次简化"></a>换元后再分部，按顺序完成两次简化</h3><p><strong>例　计算 $\displaystyle\int\sqrt x\sin\sqrt x,\mathrm{d}x$。</strong></p>
 <p>先取 $t&#x3D;\sqrt x$，则 $x&#x3D;t^2$、$\mathrm{d}x&#x3D;2t,\mathrm{d}t$，原积分为 $\displaystyle 2\int t^2\sin t,\mathrm{d}t$。</p>
 <p>第一次分部取 $u&#x3D;t^2$、$v&#x3D;-\cos t$，第二次对余下的 $\displaystyle \int t\cos t,\mathrm{d}t$ 取 $u&#x3D;t$、$v&#x3D;\sin t$，</p>
 <p>$$<br>\begin{aligned}<br>2\int t^2\sin t,\mathrm{d}t<br>&amp;&#x3D;-2t^2\cos t+4\int t\cos t,\mathrm{d}t\<br>&amp;&#x3D;-2t^2\cos t+4t\sin t+4\cos t+C.<br>\end{aligned}<br>$$</p>
@@ -818,7 +818,7 @@
 <p><strong>例　计算 $\displaystyle\int\sin(\ln x),\mathrm{d}x$，$x&gt;0$。</strong></p>
 <p>先取 $t&#x3D;\ln x$，于是 $x&#x3D;\mathrm{e}^t$、$\mathrm{d}x&#x3D;\mathrm{e}^t,\mathrm{d}t$。原积分变成上一小节的形式，</p>
 <p>$$<br>\int\mathrm{e}^t\sin t,\mathrm{d}t<br>&#x3D;\dfrac12\mathrm{e}^t(\sin t-\cos t)+C<br>&#x3D;\dfrac x2[\sin(\ln x)-\cos(\ln x)]+C.<br>$$</p>
-<h3 id="6-先选出能约简的原函数，再分部"><a href="#6-先选出能约简的原函数，再分部" class="headerlink" title="6. 先选出能约简的原函数，再分部"></a>6. 先选出能约简的原函数，再分部</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\arcsin x}{\sqrt{1-x}},\mathrm{d}x$，$-1&lt;x&lt;1$。</strong></p>
+<h3 id="先选出能约简的原函数，再分部"><a href="#先选出能约简的原函数，再分部" class="headerlink" title="先选出能约简的原函数，再分部"></a>先选出能约简的原函数，再分部</h3><p><strong>例　计算 $\displaystyle\int\dfrac{\arcsin x}{\sqrt{1-x}},\mathrm{d}x$，$-1&lt;x&lt;1$。</strong></p>
 <p>选 $u&#x3D;\arcsin x$，则 $\mathrm{d}u&#x3D;\dfrac{\mathrm{d}x}{\sqrt{1-x^2}}$。另一部分取 $\mathrm{d}v&#x3D;\dfrac{\mathrm{d}x}{\sqrt{1-x}}$，求出 $v&#x3D;-2\sqrt{1-x}$。</p>
 <p>分部后，</p>
 <p>$$<br>\int\dfrac{\arcsin x}{\sqrt{1-x}},\mathrm{d}x<br>&#x3D;-2\sqrt{1-x}\arcsin x<br>+2\int\dfrac{\sqrt{1-x}}{\sqrt{1-x^2}},\mathrm{d}x.<br>$$</p>
@@ -836,14 +836,14 @@
 <p>$$<br>-\dfrac{x}{1+\mathrm{e}^x}+\int\dfrac{\mathrm{d}x}{1+\mathrm{e}^x}.<br>$$</p>
 <p>余下积分可写成 $\displaystyle \int\left[1-\dfrac{\mathrm{e}^x}{1+\mathrm{e}^x}\right],\mathrm{d}x&#x3D;x-\ln(1+\mathrm{e}^x)+C$，最终为</p>
 <p>$$<br>\dfrac{x\mathrm{e}^x}{1+\mathrm{e}^x}-\ln(1+\mathrm{e}^x)+C.<br>$$</p>
-<h3 id="7-反三角函数的平方，分两层处理"><a href="#7-反三角函数的平方，分两层处理" class="headerlink" title="7. 反三角函数的平方，分两层处理"></a>7. 反三角函数的平方，分两层处理</h3><p><strong>例　计算 $\displaystyle\int(\arccos x)^2,\mathrm{d}x$，$-1&lt;x&lt;1$。</strong></p>
+<h3 id="反三角函数的平方，分两层处理"><a href="#反三角函数的平方，分两层处理" class="headerlink" title="反三角函数的平方，分两层处理"></a>反三角函数的平方，分两层处理</h3><p><strong>例　计算 $\displaystyle\int(\arccos x)^2,\mathrm{d}x$，$-1&lt;x&lt;1$。</strong></p>
 <p>先取 $u&#x3D;(\arccos x)^2$、$v&#x3D;x$，</p>
 <p>$$<br>\int(\arccos x)^2,\mathrm{d}x<br>&#x3D;x(\arccos x)^2+2\int\dfrac{x\arccos x}{\sqrt{1-x^2}},\mathrm{d}x.<br>$$</p>
 <p>对余下积分取 $u&#x3D;\arccos x$、$v&#x3D;-\sqrt{1-x^2}$，就有</p>
 <p>$$<br>\int\dfrac{x\arccos x}{\sqrt{1-x^2}},\mathrm{d}x<br>&#x3D;-\sqrt{1-x^2}\arccos x-\int1,\mathrm{d}x.<br>$$</p>
 <p>代回得到</p>
 <p>$$<br>x(\arccos x)^2-2\sqrt{1-x^2}\arccos x-2x+C.<br>$$</p>
-<h2 id="七、定积分中的换元、分部与对称性"><a href="#七、定积分中的换元、分部与对称性" class="headerlink" title="七、定积分中的换元、分部与对称性"></a>七、定积分中的换元、分部与对称性</h2><h3 id="1-换元时，上下限怎样一起改变"><a href="#1-换元时，上下限怎样一起改变" class="headerlink" title="1. 换元时，上下限怎样一起改变"></a>1. 换元时，上下限怎样一起改变</h3><p><strong>例　计算 $\displaystyle\int_0^{\frac{\pi}{2}}\sin x\sqrt{\cos x},\mathrm{d}x$。</strong></p>
+<h2 id="定积分中的换元、分部与对称性"><a href="#定积分中的换元、分部与对称性" class="headerlink" title="定积分中的换元、分部与对称性"></a>定积分中的换元、分部与对称性</h2><h3 id="换元时，上下限怎样一起改变"><a href="#换元时，上下限怎样一起改变" class="headerlink" title="换元时，上下限怎样一起改变"></a>换元时，上下限怎样一起改变</h3><p><strong>例　计算 $\displaystyle\int_0^{\frac{\pi}{2}}\sin x\sqrt{\cos x},\mathrm{d}x$。</strong></p>
 <p>看到 $\cos x$ 和它的导数因子 $-\sin x$，令 $u&#x3D;\cos x$，则 $\mathrm{d}u&#x3D;-\sin x,\mathrm{d}x$。</p>
 <p>把原来的两个端点分别代入 $u&#x3D;\cos x$，</p>
 <table>
@@ -872,7 +872,7 @@
 <p>令 $x&#x3D;\sin t$，原区间对应 $0\le t\le\dfrac{\pi}{2}$。根式变为 $\cos t$，微分也是 $\cos t,\mathrm{d}t$，因此</p>
 <p>$$<br>\int_0^1\sqrt{1-x^2},\mathrm{d}x<br>&#x3D;\int_0^{\frac{\pi}{2}}\cos^2t,\mathrm{d}t<br>&#x3D;\left[\dfrac t2+\dfrac14\sin2t\right]_0^{\frac{\pi}{2}}<br>&#x3D;\dfrac\pi4.<br>$$</p>
 <p>常见变式 $\displaystyle \int\dfrac{\sqrt{1-x^2}}{x^2},\mathrm{d}x$ 用同一代换后，成为 $\displaystyle \int\cot^2t,\mathrm{d}t$。由 $\cot^2t&#x3D;\csc^2t-1$，原函数为 $-\cot t-t$。对 $\displaystyle \int\dfrac{\sqrt{x^2-1}}{x^2},\mathrm{d}x$，在 $x&gt;1$ 上取 $x&#x3D;\sec t$，则成为 $\displaystyle \int(\sec t-\cos t),\mathrm{d}t$。两者都要先把根式、分母和微分全部替换，再约简。</p>
-<h3 id="2-定积分分部，边界项必须算两次"><a href="#2-定积分分部，边界项必须算两次" class="headerlink" title="2. 定积分分部，边界项必须算两次"></a>2. 定积分分部，边界项必须算两次</h3><p>$$<br>\int_a^b u,\mathrm{d}v&#x3D;[uv]_a^b-\int_a^b v,\mathrm{d}u.<br>$$</p>
+<h3 id="定积分分部，边界项必须算两次"><a href="#定积分分部，边界项必须算两次" class="headerlink" title="定积分分部，边界项必须算两次"></a>定积分分部，边界项必须算两次</h3><p>$$<br>\int_a^b u,\mathrm{d}v&#x3D;[uv]_a^b-\int_a^b v,\mathrm{d}u.<br>$$</p>
 <p><strong>例　计算 $\displaystyle\int_0^1\mathrm{e}^{\sqrt x},\mathrm{d}x$。</strong></p>
 <p>先取 $t&#x3D;\sqrt x$，得到 $\displaystyle 2\int_0^1t\mathrm{e}^t,\mathrm{d}t$。再取 $u&#x3D;t$、$v&#x3D;\mathrm{e}^t$ 分部，</p>
 <p>$$<br>2\int_0^1t\mathrm{e}^t,\mathrm{d}t<br>&#x3D;2[t\mathrm{e}^t]_0^1-2\int_0^1\mathrm{e}^t,\mathrm{d}t<br>&#x3D;2\mathrm{e}-2(\mathrm{e}-1)&#x3D;2.<br>$$</p>
@@ -880,7 +880,7 @@
 <p>取 $u&#x3D;\arcsin x$、$v&#x3D;-\sqrt{1-x^2}$。此时 $v,\mathrm{d}u&#x3D;-\mathrm{d}x$，所以</p>
 <p>$$<br>\int_0^{\frac{1}{2}}\dfrac{x\arcsin x}{\sqrt{1-x^2}},\mathrm{d}x<br>&#x3D;[-\sqrt{1-x^2}\arcsin x]_0^{\frac{1}{2}}+\int_0^{\frac{1}{2}}1,\mathrm{d}x<br>&#x3D;\dfrac12-\dfrac{\sqrt3\pi}{12}.<br>$$</p>
 <p>上限处代入 $\sqrt{1-\dfrac{1}{4}}&#x3D;\dfrac{\sqrt3}{2}$、$\arcsin\left(\dfrac{1}{2}\right)&#x3D;\dfrac{\pi}{6}$，下限处乘积为零。</p>
-<h3 id="3-根号下出现平方，先保留绝对值"><a href="#3-根号下出现平方，先保留绝对值" class="headerlink" title="3. 根号下出现平方，先保留绝对值"></a>3. 根号下出现平方，先保留绝对值</h3><p>$$<br>\sqrt{h(x)^2}&#x3D;\lvert h(x)\rvert.<br>$$</p>
+<h3 id="根号下出现平方，先保留绝对值"><a href="#根号下出现平方，先保留绝对值" class="headerlink" title="根号下出现平方，先保留绝对值"></a>根号下出现平方，先保留绝对值</h3><p>$$<br>\sqrt{h(x)^2}&#x3D;\lvert h(x)\rvert.<br>$$</p>
 <p>根号表示非负值，因此应先找 $h(x)$ 在积分区间中的零点，再判断符号。</p>
 <p><strong>例　计算 $\displaystyle\int_0^\pi\sqrt{\cos^2x-\cos^4x},\mathrm{d}x$。</strong></p>
 <p>先因式分解，</p>
@@ -888,7 +888,7 @@
 <p>在 $[0,\pi]$ 上 $\sin x\ge0$，而 $\cos x$ 在 $\dfrac{\pi}{2}$ 处变号，故</p>
 <p>$$<br>\begin{aligned}<br>\int_0^\pi\sqrt{\cos^2x-\cos^4x},\mathrm{d}x<br>&amp;&#x3D;\int_0^{\frac{\pi}{2}}\cos x\sin x,\mathrm{d}x<br>-\int_{\frac{\pi}{2}}^\pi\cos x\sin x,\mathrm{d}x\<br>&amp;&#x3D;\left[\dfrac12\sin^2x\right]<em>0^{\frac{\pi}{2}}<br>-\left[\dfrac12\sin^2x\right]</em>{\frac{\pi}{2}}^\pi&#x3D;1.<br>\end{aligned}<br>$$</p>
 <p>同样，$\sqrt{1+\cos2x}&#x3D;\sqrt2\lvert\cos x\rvert$。而 $\sqrt{\cos x-\cos^3x}$ 在 $\left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]$ 上为 $\lvert\sin x\rvert\sqrt{\cos x}$，需要在 $0$ 处分段，或者利用下面的偶性先折半。</p>
-<h3 id="4-对称区间，先判断奇偶性"><a href="#4-对称区间，先判断奇偶性" class="headerlink" title="4. 对称区间，先判断奇偶性"></a>4. 对称区间，先判断奇偶性</h3><p>若 $f(-x)&#x3D;-f(x)$，称为奇函数。若 $f(-x)&#x3D;f(x)$，称为偶函数。对于可积函数，</p>
+<h3 id="对称区间，先判断奇偶性"><a href="#对称区间，先判断奇偶性" class="headerlink" title="对称区间，先判断奇偶性"></a>对称区间，先判断奇偶性</h3><p>若 $f(-x)&#x3D;-f(x)$，称为奇函数。若 $f(-x)&#x3D;f(x)$，称为偶函数。对于可积函数，</p>
 <p>$$<br>\int_{-a}^a f(x),\mathrm{d}x&#x3D;0\quad\text{（奇函数）},<br>$$</p>
 <p>$$<br>\int_{-a}^a f(x),\mathrm{d}x&#x3D;2\int_0^a f(x),\mathrm{d}x\quad\text{（偶函数）}.<br>$$</p>
 <p>可通过将负半区间中的 $x$ 换成 $-t$ 来证明这两条公式，随后比较 $f(-t)$ 与 $f(t)$。</p>
@@ -896,7 +896,7 @@
 <p>拆成两项。$\lvert x\rvert x^2$ 是偶函数，因为 $\lvert-x\rvert(-x)^2&#x3D;\lvert x\rvert x^2$。另一个被积函数是奇函数，因为分子中的 $\sin^3x$ 变号，$\lvert x\rvert$ 和分母都不变。于是</p>
 <p>$$<br>\int_{-1}^1\lvert x\rvert\left(x^2+\dfrac{\sin^3x}{1+\cos x}\right)\mathrm{d}x<br>&#x3D;2\int_0^1x^3,\mathrm{d}x&#x3D;\dfrac12.<br>$$</p>
 <p>这里检查的是整个被积函数的奇偶性。</p>
-<h3 id="5-区间反射，两种写法相加消掉-x"><a href="#5-区间反射，两种写法相加消掉-x" class="headerlink" title="5. 区间反射，两种写法相加消掉 $x$"></a>5. 区间反射，两种写法相加消掉 $x$</h3><p>反射代换是 $x&#x3D;a+b-t$，它将端点 $a,b$ 交换。如果另一个因子满足 $g(a+b-x)&#x3D;g(x)$，则</p>
+<h3 id="区间反射，两种写法相加消掉-x"><a href="#区间反射，两种写法相加消掉-x" class="headerlink" title="区间反射，两种写法相加消掉 $x$"></a>区间反射，两种写法相加消掉 $x$</h3><p>反射代换是 $x&#x3D;a+b-t$，它将端点 $a,b$ 交换。如果另一个因子满足 $g(a+b-x)&#x3D;g(x)$，则</p>
 <p>$$<br>I&#x3D;\int_a^b xg(x),\mathrm{d}x<br>&#x3D;\int_a^b(a+b-t)g(t),\mathrm{d}t.<br>$$</p>
 <p>积分中的字母可以更名，两种写法相加得到</p>
 <p>$$<br>2I&#x3D;(a+b)\int_a^b g(x),\mathrm{d}x.<br>$$</p>
@@ -907,7 +907,7 @@
 <p>余下取 $u&#x3D;\cos x$，端点为 $1,-1$，</p>
 <p>$$<br>\int_0^\pi\dfrac{\sin x}{1+\cos^2x},\mathrm{d}x<br>&#x3D;\int_{-1}^1\dfrac{\mathrm{d}u}{1+u^2}&#x3D;\dfrac\pi2.<br>$$</p>
 <p>所以 $I&#x3D;\dfrac{\pi^2}{4}$。先检查对称性，就能把带 $x$ 的积分化成容易凑微分的积分。</p>
-<h3 id="6-多个周期，先算一个周期"><a href="#6-多个周期，先算一个周期" class="headerlink" title="6. 多个周期，先算一个周期"></a>6. 多个周期，先算一个周期</h3><p>周期 $T&gt;0$ 表示 $g(x+T)&#x3D;g(x)$。若 $n$ 为正整数，则</p>
+<h3 id="多个周期，先算一个周期"><a href="#多个周期，先算一个周期" class="headerlink" title="多个周期，先算一个周期"></a>多个周期，先算一个周期</h3><p>周期 $T&gt;0$ 表示 $g(x+T)&#x3D;g(x)$。若 $n$ 为正整数，则</p>
 <p>$$<br>\int_0^{nT}g(x),\mathrm{d}x&#x3D;n\int_0^Tg(x),\mathrm{d}x.<br>$$</p>
 <p>每一段长度 $T$ 的积分都相同。一般起点也成立，$\displaystyle \int_a^{a+T}g&#x3D;\int_0^Tg$。例如当 $0\le a&lt;T$ 时，把 $[a,a+T]$ 拆成 $[a,T]$ 与 $[T,T+a]$，后一段令 $x&#x3D;t+T$，就变成 $[0,a]$ 上的积分，两段合起来是 $[0,T]$。其他起点先平移整数个周期。</p>
 <p><strong>例　计算 $\displaystyle\int_0^{n\pi}\sqrt{1-\sin2x},\mathrm{d}x$。</strong></p>
@@ -918,12 +918,12 @@
 <p>先用整个区间的反射 $x&#x3D;n\pi-t$，因为 $\lvert\sin(n\pi-t)\rvert&#x3D;\lvert\sin t\rvert$，所以</p>
 <p>$$<br>I&#x3D;\dfrac{n\pi}{2}\int_0^{n\pi}\lvert\sin x\rvert,\mathrm{d}x.<br>$$</p>
 <p>$\lvert\sin x\rvert$ 的周期是 $\pi$，一个周期内的积分为 $\displaystyle \int_0^\pi\sin x,\mathrm{d}x&#x3D;2$，于是 $I&#x3D;\dfrac{n\pi}{2}\cdot2n&#x3D;n^2\pi$。</p>
-<h3 id="7-平移一段后变号，相邻两段抵消"><a href="#7-平移一段后变号，相邻两段抵消" class="headerlink" title="7. 平移一段后变号，相邻两段抵消"></a>7. 平移一段后变号，相邻两段抵消</h3><p>若 $g(x+T)&#x3D;-g(x)$，则</p>
+<h3 id="平移一段后变号，相邻两段抵消"><a href="#平移一段后变号，相邻两段抵消" class="headerlink" title="平移一段后变号，相邻两段抵消"></a>平移一段后变号，相邻两段抵消</h3><p>若 $g(x+T)&#x3D;-g(x)$，则</p>
 <p>$$<br>\int_T^{2T}g(x),\mathrm{d}x<br>&#x3D;\int_0^Tg(t+T),\mathrm{d}t<br>&#x3D;-\int_0^Tg(t),\mathrm{d}t.<br>$$</p>
 <p>所以长度为 $2T$ 的一对区间积分为零。</p>
 <p><strong>例　计算 $\displaystyle\int_0^{10\pi}\dfrac{\sin^3x+\cos^3x}{2\sin^2x+\cos^4x},\mathrm{d}x$。</strong></p>
 <p>先检查分母，令 $s&#x3D;\sin^2x$，有 $2s+(1-s)^2&#x3D;1+s^2\ge1$，因此分母处处非零。再将 $x$ 换成 $x+\pi$，分子变号，分母不变，满足 $g(x+\pi)&#x3D;-g(x)$。区间由五对长度为 $\pi$ 的相邻段组成，每对都抵消，结果为 $0$。</p>
-<h3 id="8-证明积分等式，按区间或函数的变化选代换"><a href="#8-证明积分等式，按区间或函数的变化选代换" class="headerlink" title="8. 证明积分等式，按区间或函数的变化选代换"></a>8. 证明积分等式，按区间或函数的变化选代换</h3><table>
+<h3 id="证明积分等式，按区间或函数的变化选代换"><a href="#证明积分等式，按区间或函数的变化选代换" class="headerlink" title="证明积分等式，按区间或函数的变化选代换"></a>证明积分等式，按区间或函数的变化选代换</h3><table>
 <thead>
 <tr>
 <th>希望发生的变化</th>
@@ -951,8 +951,8 @@
 <p>如果 $f$ 没有具体表达式，也可以照样换元。例如令 $t&#x3D;x^2$，用 $x^3,\mathrm{d}x&#x3D;x^2(x,\mathrm{d}x)&#x3D;\dfrac{t}{2},\mathrm{d}t$，就得到</p>
 <p>$$<br>\int_0^a x^3f(x^2),\mathrm{d}x&#x3D;\dfrac12\int_0^{a^2}t f(t),\mathrm{d}t.<br>$$</p>
 <p>公式成立的前提是所涉及的函数在积分区间内可积，换元关系适用。</p>
-<h2 id="八、递推公式与原函数的反向识别"><a href="#八、递推公式与原函数的反向识别" class="headerlink" title="八、递推公式与原函数的反向识别"></a>八、递推公式与原函数的反向识别</h2><h3 id="1-递推公式在做什么"><a href="#1-递推公式在做什么" class="headerlink" title="1. 递推公式在做什么"></a>1. 递推公式在做什么</h3><p>下标 $n$ 用来记录幂次。例如 $J_4$ 表示正弦四次幂的某个定积分，$J_6$ 表示六次幂的积分。递推公式把高次幂的积分写成低次幂的积分，这样只需知道少量起点，就能逐步算下去。</p>
-<h3 id="2-正弦幂的定积分，怎样降低两次幂"><a href="#2-正弦幂的定积分，怎样降低两次幂" class="headerlink" title="2. 正弦幂的定积分，怎样降低两次幂"></a>2. 正弦幂的定积分，怎样降低两次幂</h3><p>设</p>
+<h2 id="递推公式与原函数的反向识别"><a href="#递推公式与原函数的反向识别" class="headerlink" title="递推公式与原函数的反向识别"></a>递推公式与原函数的反向识别</h2><h3 id="递推公式在做什么"><a href="#递推公式在做什么" class="headerlink" title="递推公式在做什么"></a>递推公式在做什么</h3><p>下标 $n$ 用来记录幂次。例如 $J_4$ 表示正弦四次幂的某个定积分，$J_6$ 表示六次幂的积分。递推公式把高次幂的积分写成低次幂的积分，这样只需知道少量起点，就能逐步算下去。</p>
+<h3 id="正弦幂的定积分，怎样降低两次幂"><a href="#正弦幂的定积分，怎样降低两次幂" class="headerlink" title="正弦幂的定积分，怎样降低两次幂"></a>正弦幂的定积分，怎样降低两次幂</h3><p>设</p>
 <p>$$<br>J_n&#x3D;\int_0^{\frac{\pi}{2}}\sin^nx,\mathrm{d}x,<br>\qquad n&#x3D;0,1,2,\ldots.<br>$$</p>
 <p>当 $n\ge2$ 时，写成 $\sin^{n-1}x\cdot\sin x$，分部取</p>
 <p>$$<br>u&#x3D;\sin^{n-1}x,<br>\quad \mathrm{d}u&#x3D;(n-1)\sin^{n-2}x\cos x,\mathrm{d}x,<br>\quad v&#x3D;-\cos x.<br>$$</p>
@@ -968,7 +968,7 @@
 <p><strong>两种三角函数的幂次相同时。</strong> 对非负整数 $m$，先用 $\sin x\cos x&#x3D;\dfrac{\sin2x}{2}$，再取 $t&#x3D;2x$，</p>
 <p>$$<br>\int_0^{\frac{\pi}{2}}\sin^mx\cos^mx,\mathrm{d}x<br>&#x3D;\dfrac1{2^{m+1}}\int_0^\pi\sin^mt,\mathrm{d}t<br>&#x3D;\dfrac1{2^m}J_m.<br>$$</p>
 <p>最后一步是因为 $\sin(\pi-t)&#x3D;\sin t$，将 $[0,\pi]$ 上的积分折成 $\left[0,\dfrac{\pi}{2}\right]$ 的两倍。再用 $t&#x3D;\dfrac{\pi}{2}-s$，也可将 $J_m$ 写成余弦幂的定积分。</p>
-<h3 id="3-平方和的高次分母，怎样建立递推"><a href="#3-平方和的高次分母，怎样建立递推" class="headerlink" title="3. 平方和的高次分母，怎样建立递推"></a>3. 平方和的高次分母，怎样建立递推</h3><p>设 $a&gt;0$，记</p>
+<h3 id="平方和的高次分母，怎样建立递推"><a href="#平方和的高次分母，怎样建立递推" class="headerlink" title="平方和的高次分母，怎样建立递推"></a>平方和的高次分母，怎样建立递推</h3><p>设 $a&gt;0$，记</p>
 <p>$$<br>I_n&#x3D;\int\dfrac{\mathrm{d}x}{(x^2+a^2)^n},\qquad n&#x3D;1,2,\ldots.<br>$$</p>
 <p>推导时先省略中间步骤的积分常数，最终结果统一补 $C$。将被积式看成 $(x^2+a^2)^{-n}\cdot1$，分部取 $u&#x3D;(x^2+a^2)^{-n}$、$v&#x3D;x$，</p>
 <p>$$<br>I_n&#x3D;\dfrac{x}{(x^2+a^2)^n}+2n\int\dfrac{x^2}{(x^2+a^2)^{n+1}},\mathrm{d}x.<br>$$</p>
@@ -981,7 +981,7 @@
 <p>遇到更复杂的分式，可先拆到这个形式。例如</p>
 <p>$$<br>\dfrac{x^4+2x^2-x+1}{x^5+2x^3+x}<br>&#x3D;\dfrac{(x^2+1)^2-x}{x(x^2+1)^2}<br>&#x3D;\dfrac1x-\dfrac1{(x^2+1)^2}.<br>$$</p>
 <p>逐项积分即得到 $\ln\lvert x\rvert-\dfrac{x}{2(1+x^2)}-\dfrac{\arctan x}{2}+C$，$x\ne0$。</p>
-<h3 id="4-正切幂与余割幂的递推"><a href="#4-正切幂与余割幂的递推" class="headerlink" title="4. 正切幂与余割幂的递推"></a>4. 正切幂与余割幂的递推</h3><p>记 $\displaystyle T_n&#x3D;\int\tan^nx,\mathrm{d}x$。当 $n\ge2$ 时，利用 $\tan^2x&#x3D;\sec^2x-1$，</p>
+<h3 id="正切幂与余割幂的递推"><a href="#正切幂与余割幂的递推" class="headerlink" title="正切幂与余割幂的递推"></a>正切幂与余割幂的递推</h3><p>记 $\displaystyle T_n&#x3D;\int\tan^nx,\mathrm{d}x$。当 $n\ge2$ 时，利用 $\tan^2x&#x3D;\sec^2x-1$，</p>
 <p>$$<br>T_n&#x3D;\int\tan^{n-2}x\sec^2x,\mathrm{d}x-T_{n-2}.<br>$$</p>
 <p>第一项令 $u&#x3D;\tan x$，积分为 $\dfrac{\tan^{n-1}x}{n-1}$，所以</p>
 <p>$$<br>T_n&#x3D;\dfrac{\tan^{n-1}x}{n-1}-T_{n-2}.<br>$$</p>
@@ -993,7 +993,7 @@
 <p>起点 $K_0&#x3D;x$、$K_1&#x3D;\ln\left\lvert\tan\left(\dfrac{x}{2}\right)\right\rvert$。例如</p>
 <p>$$<br>\int\csc^3x,\mathrm{d}x<br>&#x3D;-\dfrac{\cos x}{2\sin^2x}+\dfrac12\ln\left\lvert\tan\dfrac x2\right\rvert+C.<br>$$</p>
 <p>使用以上两个不定积分递推时，中间的积分常数统一合并到最终的 $C$ 中。</p>
-<h3 id="5-反向使用乘积、商的求导公式"><a href="#5-反向使用乘积、商的求导公式" class="headerlink" title="5. 反向使用乘积、商的求导公式"></a>5. 反向使用乘积、商的求导公式</h3><p>先用已经会的求导公式检查候选原函数，有时可以直接识别出整个被积式。</p>
+<h3 id="反向使用乘积、商的求导公式"><a href="#反向使用乘积、商的求导公式" class="headerlink" title="反向使用乘积、商的求导公式"></a>反向使用乘积、商的求导公式</h3><p>先用已经会的求导公式检查候选原函数，有时可以直接识别出整个被积式。</p>
 <p><strong>例　计算 $\displaystyle\int\left(\ln x+\dfrac{1}{x}\right)\mathrm{e}^x,\mathrm{d}x$，$x&gt;0$。</strong></p>
 <p>两项都含 $\mathrm{e}^x$，而 $\ln x$ 的导数是 $\dfrac{1}{x}$。这正好对应乘积求导的两项，</p>
 <p>$$<br>(\mathrm{e}^x\ln x)’&#x3D;\mathrm{e}^x\ln x+\dfrac{\mathrm{e}^x}{x}.<br>$$</p>
@@ -1013,20 +1013,20 @@
 <p>$$<br>\dfrac1{1+\cos x}&#x3D;\dfrac12\sec^2\dfrac x2,<br>\qquad \dfrac{\sin x}{1+\cos x}&#x3D;\tan\dfrac x2,<br>$$</p>
 <p>第一项分部取 $u&#x3D;x$、$v&#x3D;\tan\left(\dfrac{x}{2}\right)$，变成 $\displaystyle x\tan\left(\dfrac{x}{2}\right)-\int\tan\left(\dfrac{x}{2}\right),\mathrm{d}x$。它的余项与第二项抵消，结果为 $x\tan\left(\dfrac{x}{2}\right)+C$。</p>
 <p>这个例子可以从拆分和分部逐步算出，也可用乘积求导验证结果。</p>
-<h2 id="九、怎样检查自己的答案"><a href="#九、怎样检查自己的答案" class="headerlink" title="九、怎样检查自己的答案"></a>九、怎样检查自己的答案</h2><h3 id="1-对原函数求导，检查常数因子和负号"><a href="#1-对原函数求导，检查常数因子和负号" class="headerlink" title="1. 对原函数求导，检查常数因子和负号"></a>1. 对原函数求导，检查常数因子和负号</h3><p>例如 $\displaystyle \int\cos3x,\mathrm{d}x&#x3D;\dfrac{\sin3x}{3}+C$，检查时</p>
+<h2 id="怎样检查自己的答案"><a href="#怎样检查自己的答案" class="headerlink" title="怎样检查自己的答案"></a>怎样检查自己的答案</h2><h3 id="对原函数求导，检查常数因子和负号"><a href="#对原函数求导，检查常数因子和负号" class="headerlink" title="对原函数求导，检查常数因子和负号"></a>对原函数求导，检查常数因子和负号</h3><p>例如 $\displaystyle \int\cos3x,\mathrm{d}x&#x3D;\dfrac{\sin3x}{3}+C$，检查时</p>
 <p>$$<br>\left(\dfrac13\sin3x\right)’&#x3D;\dfrac13\cdot3\cos3x&#x3D;\cos3x.<br>$$</p>
 <p>求导能直接检查换元补上的 $\dfrac{1}{3}$ 是否正确。根式写成幂以后，求导检查通常也比较方便。</p>
-<h3 id="2-换元后检查三个位置"><a href="#2-换元后检查三个位置" class="headerlink" title="2. 换元后检查三个位置"></a>2. 换元后检查三个位置</h3><p>看被积函数中的每个 $x$ 是否都已换掉，微分是否已经替换，以及定积分的上下限是否与当前变量对应。不定积分结束时，把临时变量换回题目原来的变量。</p>
-<h3 id="3-保留定义域与积分常数"><a href="#3-保留定义域与积分常数" class="headerlink" title="3. 保留定义域与积分常数"></a>3. 保留定义域与积分常数</h3><p>$\ln\lvert x\rvert$ 的导数为 $\dfrac{1}{x}$，适用于 $x&gt;0$ 与 $x&lt;0$ 的各个区间。约分之后，原来分母不能为零的位置仍然保留。例如 $\dfrac{x^2-1}{x-1}$ 约成 $x+1$ 后，原题仍要求 $x\ne1$。</p>
+<h3 id="换元后检查三个位置"><a href="#换元后检查三个位置" class="headerlink" title="换元后检查三个位置"></a>换元后检查三个位置</h3><p>看被积函数中的每个 $x$ 是否都已换掉，微分是否已经替换，以及定积分的上下限是否与当前变量对应。不定积分结束时，把临时变量换回题目原来的变量。</p>
+<h3 id="保留定义域与积分常数"><a href="#保留定义域与积分常数" class="headerlink" title="保留定义域与积分常数"></a>保留定义域与积分常数</h3><p>$\ln\lvert x\rvert$ 的导数为 $\dfrac{1}{x}$，适用于 $x&gt;0$ 与 $x&lt;0$ 的各个区间。约分之后，原来分母不能为零的位置仍然保留。例如 $\dfrac{x^2-1}{x-1}$ 约成 $x+1$ 后，原题仍要求 $x\ne1$。</p>
 <p>对数的绝对值能否去掉，要根据对数内部在当前区间内的符号判断。不定积分最后补 $C$，定义域被间断点隔开的各个区间可以分别取不同的常数。</p>
-<h3 id="4-定积分的数值是否符合符号和大小"><a href="#4-定积分的数值是否符合符号和大小" class="headerlink" title="4. 定积分的数值是否符合符号和大小"></a>4. 定积分的数值是否符合符号和大小</h3><p>若被积函数在区间内非负，且下限小于上限，结果也应非负。若 $m\le f(x)\le M$，则</p>
+<h3 id="定积分的数值是否符合符号和大小"><a href="#定积分的数值是否符合符号和大小" class="headerlink" title="定积分的数值是否符合符号和大小"></a>定积分的数值是否符合符号和大小</h3><p>若被积函数在区间内非负，且下限小于上限，结果也应非负。若 $m\le f(x)\le M$，则</p>
 <p>$$<br>m(b-a)\le\int_a^b f(x),\mathrm{d}x\le M(b-a),\qquad a&lt;b.<br>$$</p>
 <p>这可以帮助发现分段符号、端点代入和数量级上的错误。</p>
-<h3 id="5-分部以后，看看是否真正减少了计算"><a href="#5-分部以后，看看是否真正减少了计算" class="headerlink" title="5. 分部以后，看看是否真正减少了计算"></a>5. 分部以后，看看是否真正减少了计算</h3><p>例如对 $\displaystyle I&#x3D;\int_2^3\dfrac{\mathrm{d}x}{x\ln x}$，若取 $u&#x3D;\dfrac{1}{\ln x}$、$v&#x3D;\ln x$，则 $uv\equiv1$，边界项为 $[1]_2^3&#x3D;0$。分部会得到 $I&#x3D;I$，无法由此求出数值。</p>
+<h3 id="分部以后，看看是否真正减少了计算"><a href="#分部以后，看看是否真正减少了计算" class="headerlink" title="分部以后，看看是否真正减少了计算"></a>分部以后，看看是否真正减少了计算</h3><p>例如对 $\displaystyle I&#x3D;\int_2^3\dfrac{\mathrm{d}x}{x\ln x}$，若取 $u&#x3D;\dfrac{1}{\ln x}$、$v&#x3D;\ln x$，则 $uv\equiv1$，边界项为 $[1]_2^3&#x3D;0$。分部会得到 $I&#x3D;I$，无法由此求出数值。</p>
 <p>此时重新看导数配对，取 $t&#x3D;\ln x$ 更合适，</p>
 <p>$$<br>I&#x3D;\int_{\ln2}^{\ln3}\dfrac{\mathrm{d}t}{t}<br>&#x3D;\ln\dfrac{\ln3}{\ln2}.<br>$$</p>
 <p>分部后多项式次数持续增加，或只回到无法解出的原式时，可以重新选择两部分，或者先做代数变形、换元。</p>
-<h3 id="6-有些原函数需要用积分本身表示"><a href="#6-有些原函数需要用积分本身表示" class="headerlink" title="6. 有些原函数需要用积分本身表示"></a>6. 有些原函数需要用积分本身表示</h3><p>连续函数有原函数，但原函数未必能用幂、指数、对数、三角函数及其有限次组合写出来。例如 $\displaystyle \int\mathrm{e}^{x^2},\mathrm{d}x$、$\displaystyle \int\dfrac{\sin x}{x},\mathrm{d}x$ 和 $\displaystyle \int\dfrac{\mathrm{d}x}{\sqrt{1+x^4}}$ 都有这种情况。</p>
+<h3 id="有些原函数需要用积分本身表示"><a href="#有些原函数需要用积分本身表示" class="headerlink" title="有些原函数需要用积分本身表示"></a>有些原函数需要用积分本身表示</h3><p>连续函数有原函数，但原函数未必能用幂、指数、对数、三角函数及其有限次组合写出来。例如 $\displaystyle \int\mathrm{e}^{x^2},\mathrm{d}x$、$\displaystyle \int\dfrac{\sin x}{x},\mathrm{d}x$ 和 $\displaystyle \int\dfrac{\mathrm{d}x}{\sqrt{1+x^4}}$ 都有这种情况。</p>
 <p>计算中若遇到这类式子，可以用变上限积分定义原函数。定积分仍可研究对称性、上下界，或进行数值计算。</p>
 
     </div>
